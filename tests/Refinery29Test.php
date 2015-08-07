@@ -50,6 +50,29 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
         ));
     }
 
+    public function testHasNotEnabledExtraFixers()
+    {
+        $config = new Refinery29();
+
+        $extraFixers = array_diff($config->getFixers(), $this->getEnabledFixers());
+
+        $this->assertCount(0, $extraFixers, sprintf(
+            'Fixer(s) "%s" should not be enabled',
+            implode('", "', $extraFixers)
+        ));
+    }
+
+    /**
+     * @return array
+     */
+    private function getEnabledFixers()
+    {
+        return array_merge(
+            $this->getEnabledSymfonyFixers(),
+            $this->getEnabledContribFixers()
+        );
+    }
+
     /**
      * @return array
      */
