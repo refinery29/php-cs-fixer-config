@@ -16,5 +16,15 @@
     "require-dev": {
         "codeclimate/php-test-reporter": "^0.1.2",
         "phpunit/phpunit": "^4.8.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Refinery29\\CS\\Config\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Refinery29\\CS\\Config\\Test\\": "tests/"
+        }
     }
 }
