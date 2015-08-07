@@ -1,0 +1,15 @@
+{
+    "name": "refinery29/php-cs-fixer-config",
+    "description": "Provides a configuration for fabpot/php-cs-fixer, used within Refinery29.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Andreas Möller",
+            "email": "andreas.moller@refinery29.com"
+        }
+    ],
+    "require": {
+        "fabpot/php-cs-fixer": "dev-master#4bc3df8 as 2.0"
+    }
+}
