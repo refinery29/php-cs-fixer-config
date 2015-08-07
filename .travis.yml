@@ -17,9 +17,10 @@ cache:
 before_install:
   - composer self-update
   - composer config github-oauth.github.com $GITHUB_TOKEN
+  - composer validate
 
 install:
   - composer install --prefer-dist
 
 script:
-  - composer validate
+  - vendor/bin/phpunit --configuration=phpunit.xml
