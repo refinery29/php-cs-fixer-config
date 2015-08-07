@@ -63,6 +63,54 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * @dataProvider providerDoesNotHaveFixerEnabled
+     *
+     * @param string $fixer
+     * @param string $reason
+     */
+    public function testDoesNotHaveFixerEnabled($fixer, $reason)
+    {
+        $config = new Refinery29();
+
+        $this->assertNotContains($fixer, $config->getFixers(), sprintf(
+            'Fixer "%s" should not be enabled, because %s',
+            $fixer,
+            $reason
+        ));
+    }
+
+    /**
+     * @return \Generator
+     */
+    public function providerDoesNotHaveFixerEnabled()
+    {
+        $fixers = [
+            'align_double_arrow' => 'it conflicts with unalign_double_arrow (which is enabled)',
+            'align_equals' => 'it conflicts with unalign_double (yet to be enabled)',
+            'concat_without_spaces' => 'it conflicts with concat_with_spaces (which is enabled)',
+            'header_comment' => 'we do not have a header we want to add/replace (yet)',
+            'ereg_to_preg' => 'it changes behaviour',
+            'logical_not_operators_with_spaces' => 'we do not need leading and trailing whitespace before !',
+            'logical_not_operators_with_successor_space' => 'we have not decided to use this one (yet)',
+            'long_array_syntax' => 'it conflicts with short_array_syntax (which is enabled)',
+            'phpdoc_short_description' => 'our short descriptions need some work',
+            'php4_constructor' => 'it may change behaviour',
+            'php_unit_construct' => 'it may change behaviour',
+            'php_unit_strict' => 'it may change behaviour',
+            'phpdoc_var_to_type' => 'it conflicts with phpdoc_type_to_var (which is enabled)',
+            'pre_increment' => 'it is a micro-optimization',
+            'self_accessor' => 'it causes an edge case error',
+        ];
+
+        foreach ($fixers as $fixer => $reason) {
+            yield [
+                $fixer,
+                $reason,
+            ];
+        }
+    }
+
+    /**
      * @return array
      */
     private function getEnabledFixers()
