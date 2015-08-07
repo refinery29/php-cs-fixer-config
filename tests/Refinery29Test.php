@@ -38,6 +38,18 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
         ));
     }
 
+    public function testHasEnabledContribFixers()
+    {
+        $config = new Refinery29();
+
+        $missingFixers = array_diff($this->getEnabledContribFixers(), $config->getFixers());
+
+        $this->assertCount(0, $missingFixers, sprintf(
+            'Contrib fixer(s) "%s" should be enabled',
+            implode('", "', $missingFixers)
+        ));
+    }
+
     /**
      * @return array
      */
@@ -85,6 +97,20 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
             'trim_array_spaces',
             'unalign_double_arrow',
             'whitespacy_lines',
+        ];
+    }
+
+    /**
+     * @return array
+     */
+    protected function getEnabledContribFixers()
+    {
+        return [
+            'concat_with_spaces',
+            'ordered_use',
+            'phpdoc_order',
+            'short_array_syntax',
+            'short_echo_tag',
         ];
     }
 }

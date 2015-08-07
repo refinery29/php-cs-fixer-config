@@ -11,7 +11,10 @@ class Refinery29 extends Config
     {
         parent::__construct($name, $description);
 
-        $this->fixers = $this->getEnabledSymfonyFixers();
+        $this->fixers = array_merge(
+            $this->getEnabledSymfonyFixers(),
+            $this->getEnabledContribFixers()
+        );
     }
 
     public function getLevel()
@@ -76,6 +79,20 @@ class Refinery29 extends Config
             'trim_array_spaces',
             'unalign_double_arrow',
             'whitespacy_lines',
+        ];
+    }
+
+    /**
+     * @return array
+     */
+    protected function getEnabledContribFixers()
+    {
+        return [
+            'concat_with_spaces',
+            'ordered_use',
+            'phpdoc_order',
+            'short_array_syntax',
+            'short_echo_tag',
         ];
     }
 }
