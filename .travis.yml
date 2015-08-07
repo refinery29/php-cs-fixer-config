@@ -5,11 +5,7 @@ sudo: false
 env:
   global:
     secure: "byDwzM186eqc63os2zogfBPcwJ5qB/vjbTvDQIU0oUQBrFAWA8s9jyNJ8fxGs4BqDO74C2cxSIXniV7im1r7fbh9U78tRwQDefXgzvdklYGhBMqnYNtWwyvnArdvyajGqTJgady/etDMYRP4otY+qVZ31Jig3A/nBrnpdoiVs9suuOXl9QSm2bzkn+KpC5fQHeUCy8s3keEjoPijVk9aMB9PpknI68rFwBzNZXT2gFLiPYJfOsiz7LlSbDDDrgaY4gSUQtjfFOMMNgzcVW5E8eT+YtoZJFkzC1UxUqzCWgrMzETd/2w4GV6Xq9hn/eGl1RyjnoiFfudd7Bue1CPX8gsZAWXBvWQ7j3jCWdWD0z1Se2YLNVMrc8/O50OV814oUvYr2YvelYGb7VfAETa8t27Ah0a4m+IWN3oXIOcc7vk66FzIxrbtCW8WG+0m6BTVJoOOCjFtrKhFFwWPRHn4EV6JmIRoy3UOA8cZ/pG8uuqrgXTWzuY01p7Il3yndm95RYUtRggyJXBMnn9CrrKN039s17tXX0NnswOjwWVLKpS5YX/pSNz3LN1fqK+MYoPzjivjotF0QxBp+vHW/SxO4RLuAv4ffWj/WZUG9qjGgDt3KNnFC7b1LKJGSyN1kYfT2qu8praDRBWDemWuKi4M8OMtkYU6QkLYclxMD9i8X3c="
-
-addons:
-  code_climate:
-    repo_token:
-      secure: "BFgmYwkXAFl/F0uPjU2TM3sG6QirKZszEivyrxhZ3XCFP1n/T/qpyn3Al1lEkL0D7R8X3+YFCx+440A4Q5/z9hGnzsMTzryesrOlZ/dvXemysYsKW6B+qLmEaSAeW5RirjtT9dYe4ycYtK9MITUQ/1ZwDj7zqpgESwTmYbzg/8Y2CIQPX71dC+i9ppSUHkLnjjqurRNwtjInz9RdCvMsza6aQlwjl89gCuDD2H3/pdnpTNnaWqcLOeN4WpdWj/MhKHbj/6IEcf+ybVoGVCqtwSJSEr32JJV+1mIZ0XhZo61jrGcrdKwuEmfUoHnBf1V05P3+uLQsQ3JEkErgtIzPyYTA9Q2GIfQx4uOWkAitvhb89L2l8n23cxHYJUGcqEATg/NmoqX6Iai99d5uaB3lQyOVmrpyDhx9M+VMuDGLOqLuQTSg2UxPRuyOMnezVVMgburGHsU9kScXpCcwAOq2ja91rkcI/N3EklHuTocoiLEcVqGiR1GnOIgErXefLSeMc/DyBjdwyOV5iCSAn+8azQcTkqfj3r3/D4UeuYBTKTL79hzCARmIpTIMgPnpz618N90e3SUmKnejR22dbWkV4cFqD++puocgKEbEHlsp0ME1PXH+7qNKhIxW+sIAuTIIlQX8vf6Fmf9ejNM8sbxglNiZP1AiIW5WYt1lkHdp8mU="
+    secure: "UxjykX2PNcYSowEOryR8IXj7FxVQMmw4mxPDg6OdDukAjepiGNiu9zfaOf1II2TxHyKwpOZR1xNgVYuLOJsA/U2l+VgAC3g/bP08HZnLZO//6NjuBEMyY3Wzry2IuYuwKfOC4PXNHbFVe8Z4D0JK7C4kMnE9A26jgwtHB3YVK99JBYkwDE98IbEbPJzhPh/+OLbzjPhFVhY1lrjBTVoeJVnP+auHq1ugUdnWpeQDsC7E1ILnk3mYVredVAZIqD1ZWAjDy2o7xz2di5B5NbnGMHUgkyMnCezUZMtQzgbHhKe0oNVHoPZ1+c2lvyEj2He+58seaFksGL8N5pW4XxbFBPQEE5dafgSLSRAf/iOD197HEgWH9CYqe0hVSpoz87i9rgoJReB5iqNZAazRUMEYzlGwJkxusjT7srXE9BUYc3LWV7CZCO6ScdzWbgONVCoLWqaUC7VGu7GzPaMkKKckY9PhBTO0WCAjZXWyNU/a8YAJcJwVNfMeDZ/HlgA6+0JH4GiqjJDEKim16m1C22JbjFOBpgJQul3NAl8vRsXk8IrKYYMplQgFJndBRS95Frq8jzTdMtnqDxAvpFrjxflqkshtYkP4eD7nO1ryKjV2/n80/sMWz+o9520PX5LqPp+T+dQ6WzduPv8ol/aXBt0YeFVb1Amd21iTREQFtUdDa90="
 
 matrix:
   include:
@@ -36,4 +32,4 @@ script:
   - if [[ "$COLLECT_COVERAGE" == "true" && "$IS_MERGE_TO_MASTER" == "true" ]]; then vendor/bin/phpunit --configuration=phpunit.xml --coverage-clover build/logs/clover.xml; else vendor/bin/phpunit --configuration=phpunit.xml; fi
 
 after_success:
-  - if [[ "$COLLECT_COVERAGE" == "true" && "$IS_MERGE_TO_MASTER" == "true" ]]; then vendor/bin/test-reporter --coverage-report build/logs/clover.xml; fi
+  - if [[ "$COLLECT_COVERAGE" == "true" && "$IS_MERGE_TO_MASTER" == "true" ]]; then bin/report-coverage; fi
