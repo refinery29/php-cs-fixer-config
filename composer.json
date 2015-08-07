@@ -10,6 +10,7 @@
         }
     ],
     "require": {
+        "php": ">=5.5",
         "fabpot/php-cs-fixer": "dev-master#4bc3df8 as 2.0"
     },
     "require-dev": {
