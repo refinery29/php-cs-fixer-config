@@ -11,5 +11,8 @@
     ],
     "require": {
         "fabpot/php-cs-fixer": "dev-master#4bc3df8 as 2.0"
+    },
+    "require-dev": {
+        "codeclimate/php-test-reporter": "^0.1.2"
     }
 }
