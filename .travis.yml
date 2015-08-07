@@ -16,6 +16,7 @@ matrix:
 cache:
   directories:
     - $HOME/.composer/cache
+    - $HOME/.php-cs-fixer
 
 before_install:
   - composer self-update
@@ -27,6 +28,7 @@ install:
 
 before_script:
   - if [[ "$TRAVIS_PULL_REQUEST" == "false" && "$TRAVIS_BRANCH" == "master" ]]; then IS_MERGE_TO_MASTER=true; fi
+  - mkdir -p "$HOME/.php-cs-fixer"
 
 script:
   - if [[ "$COLLECT_COVERAGE" == "true" && "$IS_MERGE_TO_MASTER" == "true" ]]; then vendor/bin/phpunit --configuration=phpunit.xml --coverage-clover build/logs/clover.xml; else vendor/bin/phpunit --configuration=phpunit.xml; fi
