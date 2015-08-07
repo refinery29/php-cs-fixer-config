@@ -11,7 +11,7 @@ matrix:
   include:
     - php: 5.5
     - php: 5.6
-      env: COLLECT_COVERAGE=true
+      env: COLLECT_COVERAGE=true CHECK_CS=true
 
 cache:
   directories:
@@ -30,6 +30,7 @@ before_script:
 
 script:
   - if [[ "$COLLECT_COVERAGE" == "true" && "$IS_MERGE_TO_MASTER" == "true" ]]; then vendor/bin/phpunit --configuration=phpunit.xml --coverage-clover build/logs/clover.xml; else vendor/bin/phpunit --configuration=phpunit.xml; fi
+  - if [[ "$CHECK_CS" == "true" ]]; then vendor/bin/php-cs-fixer fix --config-file=.php_cs --verbose --diff --dry-run; fi
 
 after_success:
   - if [[ "$COLLECT_COVERAGE" == "true" && "$IS_MERGE_TO_MASTER" == "true" ]]; then bin/report-coverage; fi
