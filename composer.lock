@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ac61d86a0403833f37511fca93fe03f8",
+    "hash": "a4bfbf11b97e2047bdf44dd94aba359b",
     "packages": [
         {
             "name": "fabpot/php-cs-fixer",
@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfPHP/PHP-CS-Fixer.git",
-                "reference": "4bc3df8"
+                "reference": "4bc3df84dddf2629e6d96d6216f9ccae61d99389"
             },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/FriendsOfPHP/PHP-CS-Fixer/zipball/4bc3df84dddf2629e6d96d6216f9ccae61d99389",
-                "reference": "4bc3df8",
+                "reference": "4bc3df84dddf2629e6d96d6216f9ccae61d99389",
                 "shasum": ""
             },
             "require": {
@@ -1638,14 +1638,7 @@
             "time": "2015-07-28 14:07:07"
         }
     ],
-    "aliases": [
-        {
-            "alias": "2.0",
-            "alias_normalized": "2.0.0.0",
-            "version": "9999999-dev",
-            "package": "fabpot/php-cs-fixer"
-        }
-    ],
+    "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
         "fabpot/php-cs-fixer": 20
