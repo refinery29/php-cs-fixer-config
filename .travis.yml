@@ -2,6 +2,10 @@ language: php
 
 sudo: false
 
+env:
+  global:
+    secure: "byDwzM186eqc63os2zogfBPcwJ5qB/vjbTvDQIU0oUQBrFAWA8s9jyNJ8fxGs4BqDO74C2cxSIXniV7im1r7fbh9U78tRwQDefXgzvdklYGhBMqnYNtWwyvnArdvyajGqTJgady/etDMYRP4otY+qVZ31Jig3A/nBrnpdoiVs9suuOXl9QSm2bzkn+KpC5fQHeUCy8s3keEjoPijVk9aMB9PpknI68rFwBzNZXT2gFLiPYJfOsiz7LlSbDDDrgaY4gSUQtjfFOMMNgzcVW5E8eT+YtoZJFkzC1UxUqzCWgrMzETd/2w4GV6Xq9hn/eGl1RyjnoiFfudd7Bue1CPX8gsZAWXBvWQ7j3jCWdWD0z1Se2YLNVMrc8/O50OV814oUvYr2YvelYGb7VfAETa8t27Ah0a4m+IWN3oXIOcc7vk66FzIxrbtCW8WG+0m6BTVJoOOCjFtrKhFFwWPRHn4EV6JmIRoy3UOA8cZ/pG8uuqrgXTWzuY01p7Il3yndm95RYUtRggyJXBMnn9CrrKN039s17tXX0NnswOjwWVLKpS5YX/pSNz3LN1fqK+MYoPzjivjotF0QxBp+vHW/SxO4RLuAv4ffWj/WZUG9qjGgDt3KNnFC7b1LKJGSyN1kYfT2qu8praDRBWDemWuKi4M8OMtkYU6QkLYclxMD9i8X3c="
+
 php:
   - 5.5
   - 5.6
@@ -12,6 +16,7 @@ cache:
 
 before_install:
   - composer self-update
+  - composer config github-oauth.github.com $GITHUB_TOKEN
 
 install:
   - composer install --prefer-dist
