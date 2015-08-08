@@ -78,6 +78,7 @@ class Refinery29 extends Config
             'ternary_spaces',
             'trim_array_spaces',
             'unalign_double_arrow',
+            'unused_use',
             'whitespacy_lines',
         ];
     }
