@@ -167,6 +167,7 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
             'ternary_spaces',
             'trim_array_spaces',
             'unalign_double_arrow',
+            'unalign_equals',
             'unused_use',
             'whitespacy_lines',
         ];
