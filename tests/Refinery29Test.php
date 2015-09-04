@@ -136,6 +136,7 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
             'include',
             'join_function',
             'list_commas',
+            'method_separation',
             'multiline_array_trailing_comma',
             'namespace_no_leading_whitespace',
             'new_with_braces',
