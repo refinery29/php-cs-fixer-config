@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a4bfbf11b97e2047bdf44dd94aba359b",
+    "hash": "b1bcbbbd3edc0c281a82f4737dcc6c9d",
     "packages": [
         {
             "name": "fabpot/php-cs-fixer",
@@ -16,7 +16,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfPHP/PHP-CS-Fixer/zipball/4bc3df84dddf2629e6d96d6216f9ccae61d99389",
+                "url": "https://api.github.com/repos/FriendsOfPHP/PHP-CS-Fixer/zipball/ead0d6d8f714cf1b60df49800b28a76a96bd9466",
                 "reference": "4bc3df84dddf2629e6d96d6216f9ccae61d99389",
                 "shasum": ""
             },
@@ -122,12 +122,12 @@
             "version": "v2.7.3",
             "source": {
                 "type": "git",
-                "url": "https://github.com/symfony/Console.git",
+                "url": "git@github.com:symfony/Console.git",
                 "reference": "d6cf02fe73634c96677e428f840704bfbcaec29e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Console/zipball/d6cf02fe73634c96677e428f840704bfbcaec29e",
+                "url": "https://api.github.com/repos/symfony/Console/zipball/c0bc26eabd880b1e9362471a0e2a30b492d043a9",
                 "reference": "d6cf02fe73634c96677e428f840704bfbcaec29e",
                 "shasum": ""
             },
@@ -1646,7 +1646,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=5.5"
+        "php": ">=5.4"
     },
     "platform-dev": []
 }
