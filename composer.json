@@ -14,7 +14,7 @@
         "fabpot/php-cs-fixer": "2.0.*@dev"
     },
     "require-dev": {
-        "codeclimate/php-test-reporter": "^0.1.2",
+        "codeclimate/php-test-reporter": "0.2.0",
         "phpunit/phpunit": "^4.8.2"
     },
     "autoload": {
