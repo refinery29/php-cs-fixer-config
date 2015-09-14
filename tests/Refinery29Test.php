@@ -3,7 +3,6 @@
 namespace Refinery29\CS\Config\Test;
 
 use Refinery29\CS\Config\Refinery29;
-use Symfony\CS\ConfigInterface;
 use Symfony\CS\FixerInterface;
 
 class Refinery29Test extends \PHPUnit_Framework_TestCase
@@ -12,7 +11,7 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
     {
         $config = new Refinery29();
 
-        $this->assertInstanceOf(ConfigInterface::class, $config);
+        $this->assertInstanceOf('Symfony\CS\ConfigInterface', $config);
     }
 
     public function testValues()
@@ -80,7 +79,7 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \Generator
+     * @return array
      */
     public function providerDoesNotHaveFixerEnabled()
     {
@@ -102,12 +101,16 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
             'self_accessor' => 'it causes an edge case error',
         ];
 
+        $data = [];
+
         foreach ($fixers as $fixer => $reason) {
-            yield [
+            $data[] = [
                 $fixer,
                 $reason,
             ];
         }
+
+        return $data;
     }
 
     /**
