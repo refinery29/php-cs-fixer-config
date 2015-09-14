@@ -79,7 +79,7 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \Generator
+     * @return array
      */
     public function providerDoesNotHaveFixerEnabled()
     {
@@ -101,12 +101,16 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
             'self_accessor' => 'it causes an edge case error',
         ];
 
+        $data = [];
+
         foreach ($fixers as $fixer => $reason) {
-            yield [
+            $data[] = [
                 $fixer,
                 $reason,
             ];
         }
+
+        return $data;
     }
 
     /**
