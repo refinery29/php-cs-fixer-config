@@ -91,8 +91,59 @@ cs: composer
 
 ## Fixing issues
 
+### Manually
+
 If you need to fix issues locally, just run
 
 ```
 $ make cs
 ```
+
+### Pre-commit hook
+
+You can add a `pre-commit` hook
+
+```
+$ touch .git/pre-commit && chmod +x .git/pre-commit
+```
+
+Paste this into `.git/pre-commit`:
+
+
+```bash
+#!/usr/bin/env bash
+
+echo "pre commit hook start"
+
+CURRENT_DIRECTORY=`pwd`
+GIT_HOOKS_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+PROJECT_DIRECTORY="$GIT_HOOKS_DIR/../.."
+
+cd $PROJECT_DIRECTORY;
+PHP_CS_FIXER="vendor/bin/php-cs-fixer"
+
+HAS_PHP_CS_FIXER=false
+
+if [ -x "$PHP_CS_FIXER" ]; then
+    HAS_PHP_CS_FIXER=true
+fi
+
+if $HAS_PHP_CS_FIXER; then
+    git status --porcelain | grep -e '^[AM]\(.*\).php$' | cut -c 3- | while read line; do
+        ${PHP_CS_FIXER} fix --config-file=.php_cs --verbose ${line};
+        git add "$line";
+    done
+else
+    echo ""
+    echo "Please install php-cs-fixer, e.g.:"
+    echo ""
+    echo "  composer require --dev fabpot/php-cs-fixer:dev-master"
+    echo ""
+fi
+
+cd $CURRENT_DIRECTORY;
+echo "pre commit hook finish"
+```
+
+:bulb: See https://gist.github.com/jwage/c4ef1dcb95007b5be0da by [@jwage](http://github.com/jwage) (adjusted by [@rcatlin](http://github.com/rcatlin) for [@refinery29](http://github.com/refinery29)).
