@@ -58,6 +58,7 @@ class Refinery29 extends Config
             'duplicate_semicolon' => true,
             'empty_return' => true,
             'extra_empty_lines' => true,
+            'function_typehint_space' => false, // new
             'include' => true,
             'list_commas' => true,
             'method_separation' => true,
@@ -79,6 +80,7 @@ class Refinery29 extends Config
             'phpdoc_short_description' => false,
             'phpdoc_to_comment' => true,
             'phpdoc_trim' => true,
+            'phpdoc_types' => false, // new
             'phpdoc_type_to_var' => true,
             'phpdoc_var_without_name' => true,
             'pre_increment' => false,
@@ -111,7 +113,6 @@ class Refinery29 extends Config
             'align_equals' => false,
             'concat_with_spaces' => true,
             'ereg_to_preg' => false,
-            'function_typehint_space' => false, // new
             'header_comment' => false,
             'logical_not_operators_with_spaces' => false,
             'logical_not_operators_with_successor_space' => false,
@@ -124,7 +125,6 @@ class Refinery29 extends Config
             'php_unit_construct' => false,
             'php_unit_strict' => false,
             'phpdoc_order' => true,
-            'phpdoc_types' => false, // new
             'phpdoc_var_to_type' => false,
             'psr0' => true,
             'short_array_syntax' => true,
