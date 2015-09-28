@@ -21,7 +21,7 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
         $this->assertSame('The configuration for Refinery29 PHP applications', $config->getDescription());
         $this->assertTrue($config->usingCache());
         $this->assertTrue($config->usingLinter());
-        $this->assertTrue($config->getRiskyAllowed());
+        $this->assertFalse($config->getRiskyAllowed());
     }
 
     public function testHasPsr2Rules()
@@ -227,7 +227,7 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
             'php_unit_strict' => false,
             'phpdoc_order' => true,
             'phpdoc_var_to_type' => false,
-            'psr0' => true,
+            'psr0' => false,
             'short_array_syntax' => true,
             'short_echo_tag' => true,
             'strict' => false,

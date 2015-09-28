@@ -23,7 +23,7 @@ class Refinery29 extends Config
 
     public function getRiskyAllowed()
     {
-        return true;
+        return false;
     }
 
     public function getRules()
@@ -126,7 +126,7 @@ class Refinery29 extends Config
             'php_unit_strict' => false,
             'phpdoc_order' => true,
             'phpdoc_var_to_type' => false,
-            'psr0' => true,
+            'psr0' => false,
             'short_array_syntax' => true,
             'short_echo_tag' => true,
             'strict' => false,
