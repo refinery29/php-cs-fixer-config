@@ -3,23 +3,12 @@
 namespace Refinery29\CS\Config;
 
 use Symfony\CS\Config\Config;
-use Symfony\CS\FixerInterface;
 
 class Refinery29 extends Config
 {
     public function __construct($name = 'refinery29', $description = 'The configuration for Refinery29 PHP applications')
     {
         parent::__construct($name, $description);
-
-        $this->fixers = array_merge(
-            $this->getEnabledSymfonyFixers(),
-            $this->getEnabledContribFixers()
-        );
-    }
-
-    public function getLevel()
-    {
-        return FixerInterface::PSR2_LEVEL;
     }
 
     public function usingCache()
@@ -32,70 +21,116 @@ class Refinery29 extends Config
         return true;
     }
 
+    public function getRiskyAllowed()
+    {
+        return true;
+    }
+
+    public function getRules()
+    {
+        return array_merge(
+            $this->getPsr2Rules(),
+            $this->getSymfonyRules(),
+            $this->getContribRules()
+        );
+    }
+
     /**
      * @return array
      */
-    private function getEnabledSymfonyFixers()
+    private function getPsr2Rules()
     {
         return [
-            'alias_functions',
-            'blankline_after_open_tag',
-            'double_arrow_multiline_whitespaces',
-            'duplicate_semicolon',
-            'empty_return',
-            'extra_empty_lines',
-            'include',
-            'join_function',
-            'list_commas',
-            'method_separation',
-            'multiline_array_trailing_comma',
-            'namespace_no_leading_whitespace',
-            'new_with_braces',
-            'no_blank_lines_after_class_opening',
-            'no_empty_lines_after_phpdocs',
-            'object_operator',
-            'operators_spaces',
-            'phpdoc_align',
-            'phpdoc_indent',
-            'phpdoc_inline_tag',
-            'phpdoc_no_access',
-            'phpdoc_no_empty_return',
-            'phpdoc_no_package',
-            'phpdoc_scalar',
-            'phpdoc_separation',
-            'phpdoc_to_comment',
-            'phpdoc_trim',
-            'phpdoc_type_to_var',
-            'phpdoc_var_without_name',
-            'remove_leading_slash_use',
-            'remove_lines_between_uses',
-            'return',
-            'single_array_no_trailing_comma',
-            'single_blank_line_before_namespace',
-            'single_quote',
-            'spaces_before_semicolon',
-            'spaces_cast',
-            'standardize_not_equal',
-            'ternary_spaces',
-            'trim_array_spaces',
-            'unalign_double_arrow',
-            'unalign_equals',
-            'unused_use',
-            'whitespacy_lines',
+            '@PSR2' => true,
         ];
     }
 
     /**
      * @return array
      */
-    protected function getEnabledContribFixers()
+    private function getSymfonyRules()
     {
         return [
-            'concat_with_spaces',
-            'ordered_use',
-            'phpdoc_order',
-            'short_array_syntax',
-            'short_echo_tag',
+            'alias_functions' => true,
+            'blankline_after_open_tag' => true,
+            'concat_without_spaces' => false,
+            'double_arrow_multiline_whitespaces' => true,
+            'duplicate_semicolon' => true,
+            'empty_return' => true,
+            'extra_empty_lines' => true,
+            'include' => true,
+            'list_commas' => true,
+            'method_separation' => true,
+            'multiline_array_trailing_comma' => true,
+            'namespace_no_leading_whitespace' => true,
+            'new_with_braces' => true,
+            'no_blank_lines_after_class_opening' => true,
+            'no_empty_lines_after_phpdocs' => true,
+            'object_operator' => true,
+            'operators_spaces' => true,
+            'phpdoc_align' => true,
+            'phpdoc_indent' => true,
+            'phpdoc_inline_tag' => true,
+            'phpdoc_no_access' => true,
+            'phpdoc_no_empty_return' => true,
+            'phpdoc_no_package' => true,
+            'phpdoc_scalar' => true,
+            'phpdoc_separation' => true,
+            'phpdoc_short_description' => false,
+            'phpdoc_to_comment' => true,
+            'phpdoc_trim' => true,
+            'phpdoc_type_to_var' => true,
+            'phpdoc_var_without_name' => true,
+            'pre_increment' => false,
+            'remove_leading_slash_use' => true,
+            'remove_lines_between_uses' => true,
+            'return' => true,
+            'self_accessor' => false,
+            'single_array_no_trailing_comma' => true,
+            'single_blank_line_before_namespace' => true,
+            'single_quote' => true,
+            'spaces_before_semicolon' => true,
+            'spaces_cast' => true,
+            'standardize_not_equal' => true,
+            'ternary_spaces' => true,
+            'trim_array_spaces' => true,
+            'unalign_double_arrow' => true,
+            'unalign_equals' => true,
+            'unused_use' => true,
+            'whitespacy_lines' => true,
+        ];
+    }
+
+    /**
+     * @return array
+     */
+    protected function getContribRules()
+    {
+        return [
+            'align_double_arrow' => false,
+            'align_equals' => false,
+            'concat_with_spaces' => true,
+            'ereg_to_preg' => false,
+            'function_typehint_space' => false, // new
+            'header_comment' => false,
+            'logical_not_operators_with_spaces' => false,
+            'logical_not_operators_with_successor_space' => false,
+            'long_array_syntax' => false,
+            'multiline_spaces_before_semicolon' => false, // new
+            'newline_after_open_tag' => false, // new
+            'no_blank_lines_before_namespace' => false, // new
+            'ordered_use' => true,
+            'php4_constructor' => false,
+            'php_unit_construct' => false,
+            'php_unit_strict' => false,
+            'phpdoc_order' => true,
+            'phpdoc_types' => false, // new
+            'phpdoc_var_to_type' => false,
+            'psr0' => true,
+            'short_array_syntax' => true,
+            'short_echo_tag' => true,
+            'strict' => false,
+            'strict_param' => false,
         ];
     }
 }
