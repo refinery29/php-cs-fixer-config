@@ -117,9 +117,9 @@ class Refinery29 extends Config
             'logical_not_operators_with_spaces' => false,
             'logical_not_operators_with_successor_space' => false,
             'long_array_syntax' => false,
-            'multiline_spaces_before_semicolon' => false, // new
-            'newline_after_open_tag' => false, // new
-            'no_blank_lines_before_namespace' => false, // new
+            'multiline_spaces_before_semicolon' => false,
+            'newline_after_open_tag' => true,
+            'no_blank_lines_before_namespace' => false,
             'ordered_use' => true,
             'php4_constructor' => false,
             'php_unit_construct' => false,
