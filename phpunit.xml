@@ -17,12 +17,12 @@
 >
     <testsuites>
         <testsuite name="Refinery29 Tests">
-            <directory>tests/</directory>
+            <directory>test</directory>
         </testsuite>
     </testsuites>
     <filter>
         <whitelist addUncoveredFilesFromWhitelist="true" processUncoveredFilesFromWhitelist="true">
-            <directory suffix=".php">src/</directory>
+            <directory suffix=".php">src</directory>
         </whitelist>
     </filter>
 </phpunit>
