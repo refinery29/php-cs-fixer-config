@@ -19,12 +19,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Refinery29\\CS\\Config\\": "src/"
+            "Refinery29\\CS\\Config\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Refinery29\\CS\\Config\\Test\\": "tests/"
+            "Refinery29\\CS\\Config\\Test\\": "test"
         }
     }
 }
