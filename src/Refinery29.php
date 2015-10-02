@@ -79,7 +79,7 @@ class Refinery29 extends Config
             'phpdoc_short_description' => false,
             'phpdoc_to_comment' => true,
             'phpdoc_trim' => true,
-            'phpdoc_types' => false, // new
+            'phpdoc_types' => true,
             'phpdoc_type_to_var' => true,
             'phpdoc_var_without_name' => true,
             'pre_increment' => false,
