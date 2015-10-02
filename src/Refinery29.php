@@ -58,7 +58,7 @@ class Refinery29 extends Config
             'duplicate_semicolon' => true,
             'empty_return' => true,
             'extra_empty_lines' => true,
-            'function_typehint_space' => false, // new
+            'function_typehint_space' => true,
             'include' => true,
             'list_commas' => true,
             'method_separation' => true,

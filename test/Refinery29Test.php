@@ -159,7 +159,7 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
             'duplicate_semicolon' => true,
             'empty_return' => true,
             'extra_empty_lines' => true,
-            'function_typehint_space' => false,
+            'function_typehint_space' => true,
             'include' => true,
             'list_commas' => true,
             'method_separation' => true,
