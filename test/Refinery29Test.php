@@ -3,6 +3,7 @@
 namespace Refinery29\CS\Config\Test;
 
 use Refinery29\CS\Config\Refinery29;
+use Symfony\CS\ConfigInterface;
 
 class Refinery29Test extends \PHPUnit_Framework_TestCase
 {
@@ -10,7 +11,7 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
     {
         $config = new Refinery29();
 
-        $this->assertInstanceOf('Symfony\CS\ConfigInterface', $config);
+        $this->assertInstanceOf(ConfigInterface::class, $config);
     }
 
     public function testValues()
