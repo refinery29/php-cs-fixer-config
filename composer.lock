@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9da7d88ece8005c9743d744dd05419fa",
-    "content-hash": "d47c3a7f159afbbdaf4595f8e9910ac3",
+    "hash": "e91f8381c65c0b1e56db269993e83559",
+    "content-hash": "f9ee0d9626dcaa17e93eb6bc843b73c7",
     "packages": [
         {
             "name": "fabpot/php-cs-fixer",
@@ -13,12 +13,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfPHP/PHP-CS-Fixer.git",
-                "reference": "7b12997"
+                "reference": "7b129979046ceaa47e985db3ae509f811989f83a"
             },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/FriendsOfPHP/PHP-CS-Fixer/zipball/7b129979046ceaa47e985db3ae509f811989f83a",
-                "reference": "7b12997",
+                "reference": "7b129979046ceaa47e985db3ae509f811989f83a",
                 "shasum": ""
             },
             "require": {
@@ -1640,14 +1640,7 @@
             "time": "2015-07-28 14:07:07"
         }
     ],
-    "aliases": [
-        {
-            "alias": "2.0",
-            "alias_normalized": "2.0.0.0",
-            "version": "9999999-dev",
-            "package": "fabpot/php-cs-fixer"
-        }
-    ],
+    "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
         "fabpot/php-cs-fixer": 20
