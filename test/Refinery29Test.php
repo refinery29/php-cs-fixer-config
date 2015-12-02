@@ -154,6 +154,7 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
     {
         return [
             'alias_functions' => true,
+            'array_element_no_space_before_comma' => true,
             'blankline_after_open_tag' => true,
             'concat_without_spaces' => false,
             'double_arrow_multiline_whitespaces' => true,
