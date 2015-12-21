@@ -99,6 +99,7 @@ class Refinery29 extends Config
             'trim_array_spaces' => true,
             'unalign_double_arrow' => true,
             'unalign_equals' => true,
+            'unneeded_control_parentheses' => true,
             'unused_use' => true,
             'whitespacy_lines' => true,
         ];
