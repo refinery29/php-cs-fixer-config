@@ -92,6 +92,7 @@ class Refinery29 extends Config
             'single_array_no_trailing_comma' => true,
             'single_blank_line_before_namespace' => true,
             'single_quote' => true,
+            'spaces_after_semicolon' => true,
             'spaces_before_semicolon' => true,
             'spaces_cast' => true,
             'standardize_not_equal' => true,
