@@ -36,3 +36,6 @@ script:
 
 after_success:
   - if [[ "$COLLECT_COVERAGE" == "true" && "$IS_MERGE_TO_MASTER" == "true" ]]; then vendor/bin/test-reporter; fi
+
+notifications:
+  email: never
