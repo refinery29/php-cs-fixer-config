@@ -6,9 +6,19 @@ use Symfony\CS\Config\Config;
 
 class Refinery29 extends Config
 {
-    public function __construct($name = 'refinery29', $description = 'The configuration for Refinery29 PHP applications')
+    /**
+     * @var string
+     */
+    private $header;
+
+    /**
+     * @param string $header
+     */
+    public function __construct($header = null)
     {
-        parent::__construct($name, $description);
+        parent::__construct('refinery29', 'The configuration for Refinery29 PHP applications');
+
+        $this->header = $header;
     }
 
     public function usingCache()
@@ -112,7 +122,7 @@ class Refinery29 extends Config
      */
     protected function getContribRules()
     {
-        return [
+        $rules = [
             'align_double_arrow' => false,
             'align_equals' => false,
             'concat_with_spaces' => true,
@@ -137,5 +147,13 @@ class Refinery29 extends Config
             'strict' => false,
             'strict_param' => false,
         ];
+
+        if ($this->header !== null) {
+            $rules['header_comment'] = [
+                'header' => $this->header,
+            ];
+        }
+
+        return $rules;
     }
 }
