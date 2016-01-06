@@ -58,6 +58,33 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
         );
     }
 
+    public function testDoesNotHaveHeaderCommentFixerByDefault()
+    {
+        $config = new Refinery29();
+
+        $rules = $config->getRules();
+
+        $this->assertArrayHasKey('header_comment', $rules);
+        $this->assertFalse($rules['header_comment']);
+    }
+
+    public function testHasHeaderCommentFixerIfProvided()
+    {
+        $header = 'foo';
+
+        $config = new Refinery29($header);
+
+        $rules = $config->getRules();
+
+        $this->assertArrayHasKey('header_comment', $rules);
+
+        $expected = [
+            'header' => $header,
+        ];
+
+        $this->assertSame($expected, $rules['header_comment']);
+    }
+
     /**
      * @param array  $expected
      * @param array  $actual
@@ -111,7 +138,7 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
             'align_double_arrow' => 'it conflicts with unalign_double_arrow (which is enabled)',
             'align_equals' => 'it conflicts with unalign_double (yet to be enabled)',
             'concat_without_spaces' => 'it conflicts with concat_with_spaces (which is enabled)',
-            'header_comment' => 'we do not have a header we want to add/replace (yet)',
+            'header_comment' => 'it is not enabled by default',
             'ereg_to_preg' => 'it changes behaviour',
             'logical_not_operators_with_spaces' => 'we do not need leading and trailing whitespace before !',
             'logical_not_operators_with_successor_space' => 'we have not decided to use this one (yet)',

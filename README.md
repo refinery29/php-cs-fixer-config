@@ -36,6 +36,19 @@ $config->setCacheFile($cacheDir . '/.php_cs.cache');
 return $config;
 ```
 
+:bulb: Optionally, you can specify a header comment to use, which will automatically enable the `header_comment` fixer:
+
+```php
+$header = <<<EOF
+Copyright (c) 2016 Refinery29, Inc.
+
+For the full copyright and license information, please view
+the LICENSE file that was distributed with this source code.
+EOF;
+
+$config = new Refinery29\CS\Config\Refinery29($header);
+```
+
 ### Git
 
 Add `.php_cs.cache` (this is the cache file created by `php-cs-fixer`) to `.gitignore`:
