@@ -155,7 +155,6 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
             'php_unit_construct' => 'it may change behaviour',
             'php_unit_strict' => 'it may change behaviour',
             'phpdoc_var_to_type' => 'it conflicts with phpdoc_type_to_var (which is enabled)',
-            'pre_increment' => 'it is a micro-optimization',
             'self_accessor' => 'it causes an edge case error',
         ];
 
@@ -220,7 +219,7 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
             'phpdoc_types' => true,
             'phpdoc_type_to_var' => true,
             'phpdoc_var_without_name' => true,
-            'pre_increment' => false,
+            'pre_increment' => true,
             'remove_leading_slash_use' => true,
             'remove_lines_between_uses' => true,
             'return' => true,
