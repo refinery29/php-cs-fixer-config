@@ -13,7 +13,7 @@ we use to verify and enforce a single coding standard for PHP code within Refine
 Run
 
 ```
-$ composer require --dev "fabpot/php-cs-fixer:2.0.*@dev"
+$ composer require --dev "fabpot/php-cs-fixer:2.0.x-dev"
 $ composer require --dev refinery29/php-cs-fixer-config
 ```
 
