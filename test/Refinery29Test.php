@@ -226,6 +226,7 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
             'return' => true,
             'self_accessor' => false,
             'short_bool_cast' => true,
+            'short_scalar_cast' => true,
             'single_array_no_trailing_comma' => true,
             'single_blank_line_before_namespace' => true,
             'single_quote' => true,
