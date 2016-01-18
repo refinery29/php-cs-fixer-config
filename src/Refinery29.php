@@ -78,6 +78,7 @@ class Refinery29 extends Config
             'empty_return' => true,
             'extra_empty_lines' => true,
             'include' => true,
+            'hash_to_slash_comment' => true,
             'list_commas' => true,
             'method_separation' => true,
             'multiline_array_trailing_comma' => true,
