@@ -101,7 +101,7 @@ class Refinery29 extends Config
             'phpdoc_types' => true,
             'phpdoc_type_to_var' => true,
             'phpdoc_var_without_name' => true,
-            'pre_increment' => false,
+            'pre_increment' => true,
             'remove_leading_slash_use' => true,
             'remove_lines_between_uses' => true,
             'return' => true,
