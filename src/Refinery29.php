@@ -9,7 +9,7 @@
 
 namespace Refinery29\CS\Config;
 
-use Symfony\CS\Config\Config;
+use Symfony\CS\Config;
 
 class Refinery29 extends Config
 {

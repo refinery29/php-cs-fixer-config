@@ -13,12 +13,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfPHP/PHP-CS-Fixer.git",
-                "reference": "10451b837f92f331acecafa69e00a4a6e9a6152d"
+                "reference": "6c20503c00b6c3466ffff21a9b4003636cd77de4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfPHP/PHP-CS-Fixer/zipball/10451b837f92f331acecafa69e00a4a6e9a6152d",
-                "reference": "10451b837f92f331acecafa69e00a4a6e9a6152d",
+                "url": "https://api.github.com/repos/FriendsOfPHP/PHP-CS-Fixer/zipball/6c20503c00b6c3466ffff21a9b4003636cd77de4",
+                "reference": "6c20503c00b6c3466ffff21a9b4003636cd77de4",
                 "shasum": ""
             },
             "require": {
@@ -64,7 +64,7 @@
                 }
             ],
             "description": "A tool to automatically fix PHP code style",
-            "time": "2016-01-18 02:01:11"
+            "time": "2016-01-24 22:17:54"
         },
         {
             "name": "sebastian/diff",
