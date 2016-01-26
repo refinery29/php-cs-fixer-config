@@ -148,6 +148,7 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
             'concat_without_spaces' => 'it conflicts with concat_with_spaces (which is enabled)',
             'heredoc_to_nowdoc' => 'we have not decided to use this one (yet)',
             'self_accessor' => 'it causes an edge case error',
+            'phpdoc_summary' => 'we have not decided to use this one (yet)',
             /*
              * Contrib
              */
@@ -238,7 +239,7 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
             'phpdoc_no_simplified_null_return' => true,
             'phpdoc_scalar' => true,
             'phpdoc_separation' => true,
-            'phpdoc_summary' => true,
+            'phpdoc_summary' => false,
             'phpdoc_to_comment' => true,
             'phpdoc_trim' => true,
             'phpdoc_type_to_var' => true,
