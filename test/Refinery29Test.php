@@ -148,6 +148,7 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
             'concat_without_spaces' => 'it conflicts with concat_with_spaces (which is enabled)',
             'heredoc_to_nowdoc' => 'we have not decided to use this one (yet)',
             'self_accessor' => 'it causes an edge case error',
+            'no_unreachable_default_argument_value' => 'we have not decided to use this one (yet)',
             'phpdoc_summary' => 'we have not decided to use this one (yet)',
             /*
              * Contrib
@@ -227,7 +228,7 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
             'no_trailing_comma_in_list_call' => true,
             'no_trailing_comma_in_singleline_array' => true,
             'no_unneeded_control_parentheses' => true,
-            'no_unreachable_default_argument_value' => true,
+            'no_unreachable_default_argument_value' => false,
             'no_unused_imports' => true,
             'no_whitespace_before_comma_in_array' => true,
             'object_operator_without_whitespace' => true,
