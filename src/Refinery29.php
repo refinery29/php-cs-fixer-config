@@ -105,7 +105,7 @@ class Refinery29 extends Config
             'phpdoc_no_simplified_null_return' => true,
             'phpdoc_scalar' => true,
             'phpdoc_separation' => true,
-            'phpdoc_summary' => true,
+            'phpdoc_summary' => false,
             'phpdoc_to_comment' => true,
             'phpdoc_trim' => true,
             'phpdoc_type_to_var' => true,
