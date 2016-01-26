@@ -13,10 +13,36 @@ we use to verify and enforce a single coding standard for PHP code within Refine
 Run
 
 ```
-$ composer require --dev "fabpot/php-cs-fixer:2.0.x-dev"
 $ composer require --dev refinery29/php-cs-fixer-config
 ```
 
+:exclamation: Since `fabpot/php-cs-fixer:2.0.x-dev` isn't stable, we're pinning the dependency to a known commit. 
+
+There are two possibilities here
+ 
+* you require that same commit in your repository
+
+    ```
+    $ composer require fabpot/php-cs-fixer-config:dev-master#2ac4bdb
+    ```
+
+* you configure `composer.json` in your root package with
+
+    ```json
+    {
+        "minimum-stability": "dev",
+        "prefer-stable": true
+    }
+    ```
+  and remove `fabpot/php-cs-fixer` with
+  
+    ```
+    $ composer remove fabpot/php-cs-fixer
+    ```
+  trusting us to pull in a working version.
+  
+For reference, see [`fabpot/php-cs-fixer-config:dev-master#2ac4bdb`](https://github.com/FriendsOfPHP/PHP-CS-Fixer/commit/2ac4bdb4cb989d7b32821265ef6dcdf9dcda06ba).
+  
 ## Usage
 
 ### Configuration
