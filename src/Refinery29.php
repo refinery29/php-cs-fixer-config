@@ -93,7 +93,7 @@ class Refinery29 extends Config
             'no_trailing_comma_in_list_call' => true,
             'no_trailing_comma_in_singleline_array' => true,
             'no_unneeded_control_parentheses' => true,
-            'no_unreachable_default_argument_value' => false,
+            'no_unreachable_default_argument_value' => true,
             'no_unused_imports' => true,
             'no_whitespace_before_comma_in_array' => true,
             'object_operator_without_whitespace' => true,
