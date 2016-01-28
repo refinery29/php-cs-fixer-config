@@ -146,7 +146,7 @@ class Refinery29 extends Config
             'header_comment' => false,
             'linebreak_after_opening_tag' => false,
             'long_array_syntax' => false,
-            'no_blank_lines_before_namespace' => false,
+            'no_blank_lines_before_namespace' => true,
             'no_multiline_whitespaces_before_semicolon' => false,
             'no_php4_constructor' => false,
             'no_short_echo_tag' => true,
