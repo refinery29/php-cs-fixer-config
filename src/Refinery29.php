@@ -144,7 +144,7 @@ class Refinery29 extends Config
             'ereg_to_preg' => false,
             'echo_to_print' => false,
             'header_comment' => false,
-            'linebreak_after_opening_tag' => false,
+            'linebreak_after_opening_tag' => true,
             'long_array_syntax' => false,
             'no_blank_lines_before_namespace' => true,
             'no_multiline_whitespaces_before_semicolon' => false,
