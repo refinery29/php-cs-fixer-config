@@ -106,13 +106,13 @@ If you only want to run `php-cs-fixer` on one PHP version, update your build mat
 ```yml
 matrix:
   include:
-    - php: 5.4
     - php: 5.5
+      env: WITH_CS=true
     - php: 5.6
-      env: CHECK_CS=true
+      env: WITH_COVERAGE=true
       
 script:
-  - if [[ "$CHECK_CS" == "true" ]]; then vendor/bin/php-cs-fixer fix --config=.php_cs --verbose --diff --dry-run; fi
+  - if [[ "$WITH_CS" == "true" ]]; then vendor/bin/php-cs-fixer fix --config=.php_cs --verbose --diff --dry-run; fi
 ```
 
 ### Makefile
