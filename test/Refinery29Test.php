@@ -228,6 +228,7 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
             'no_unreachable_default_argument_value' => true,
             'no_unused_imports' => true,
             'no_whitespace_before_comma_in_array' => true,
+            'no_whitespace_in_blank_lines' => true,
             'object_operator_without_whitespace' => true,
             'phpdoc_align' => true,
             'phpdoc_indent' => true,
@@ -260,7 +261,6 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
             'unalign_equals' => true,
             'unary_operator_spaces' => true,
             'whitespace_after_comma_in_array' => true,
-            'whitespacy_lines' => true,
         ];
     }
 
