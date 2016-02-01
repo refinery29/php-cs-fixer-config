@@ -9,8 +9,8 @@
 
 namespace Refinery29\CS\Config\Test;
 
+use PhpCsFixer\ConfigInterface;
 use Refinery29\CS\Config\Refinery29;
-use Symfony\CS\ConfigInterface;
 
 class Refinery29Test extends \PHPUnit_Framework_TestCase
 {
