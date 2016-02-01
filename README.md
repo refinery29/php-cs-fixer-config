@@ -98,7 +98,7 @@ Then run `php-cs-fixer` in the `script` section:
 
 ```yml
 script:
-  - vendor/bin/php-cs-fixer fix --config-file=.php_cs --verbose --diff --dry-run
+  - vendor/bin/php-cs-fixer fix --config=.php_cs --verbose --diff --dry-run
 ```
 
 If you only want to run `php-cs-fixer` on one PHP version, update your build matrix and use a condition:
@@ -112,7 +112,7 @@ matrix:
       env: CHECK_CS=true
       
 script:
-  - if [[ "$CHECK_CS" == "true" ]]; then vendor/bin/php-cs-fixer fix --config-file=.php_cs --verbose --diff --dry-run; fi
+  - if [[ "$CHECK_CS" == "true" ]]; then vendor/bin/php-cs-fixer fix --config=.php_cs --verbose --diff --dry-run; fi
 ```
 
 ### Makefile
