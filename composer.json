@@ -11,7 +11,7 @@
     ],
     "require": {
         "php": ">=5.5",
-        "fabpot/php-cs-fixer": "dev-master#2ac4bdb"
+        "fabpot/php-cs-fixer": "dev-master#518194b"
     },
     "require-dev": {
         "codeclimate/php-test-reporter": "0.2.0",
