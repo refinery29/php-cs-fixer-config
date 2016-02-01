@@ -6,11 +6,10 @@
  * For the full copyright and license information, please view
  * the LICENSE file that was distributed with this source code.
  */
-
 namespace Refinery29\CS\Config\Test;
 
+use PhpCsFixer\ConfigInterface;
 use Refinery29\CS\Config\Refinery29;
-use Symfony\CS\ConfigInterface;
 
 class Refinery29Test extends \PHPUnit_Framework_TestCase
 {
@@ -228,13 +227,14 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
             'no_unreachable_default_argument_value' => true,
             'no_unused_imports' => true,
             'no_whitespace_before_comma_in_array' => true,
+            'no_whitespace_in_blank_lines' => true,
             'object_operator_without_whitespace' => true,
             'phpdoc_align' => true,
             'phpdoc_indent' => true,
             'phpdoc_inline_tag' => true,
             'phpdoc_no_access' => true,
+            'phpdoc_no_empty_return' => true,
             'phpdoc_no_package' => true,
-            'phpdoc_no_simplified_null_return' => true,
             'phpdoc_scalar' => true,
             'phpdoc_separation' => true,
             'phpdoc_summary' => false,
@@ -260,7 +260,6 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
             'unalign_equals' => true,
             'unary_operator_spaces' => true,
             'whitespace_after_comma_in_array' => true,
-            'whitespacy_lines' => true,
         ];
     }
 
