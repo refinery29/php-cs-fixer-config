@@ -150,6 +150,7 @@ class Refinery29 extends Config
             'no_multiline_whitespaces_before_semicolon' => false,
             'no_php4_constructor' => false,
             'no_short_echo_tag' => true,
+            'no_useless_return' => true,
             'not_operators_with_space' => false,
             'not_operator_with_successor_space' => false,
             'ordered_imports' => true,
