@@ -23,7 +23,7 @@ There are two possibilities here
 * you require that same commit in your repository
 
     ```
-    $ composer require fabpot/php-cs-fixer-config:dev-master#2ac4bdb
+    $ composer require fabpot/php-cs-fixer-config:dev-master#0a63dfb.
     ```
 
 * you configure `composer.json` in your root package with
