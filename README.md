@@ -41,7 +41,7 @@ There are two possibilities here
     ```
   trusting us to pull in a working version.
   
-For reference, see [`fabpot/php-cs-fixer-config:dev-master#2ac4bdb`](https://github.com/FriendsOfPHP/PHP-CS-Fixer/commit/2ac4bdb4cb989d7b32821265ef6dcdf9dcda06ba).
+For reference, see [`fabpot/php-cs-fixer-config:dev-master#0a63dfb`](https://github.com/FriendsOfPHP/PHP-CS-Fixer/commit/0a63dfb).
   
 ## Usage
 
