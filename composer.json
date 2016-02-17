@@ -14,7 +14,7 @@
     },
     "require-dev": {
         "codeclimate/php-test-reporter": "0.2.0",
-        "fabpot/php-cs-fixer": "dev-master#47dd44c",
+        "fabpot/php-cs-fixer": "dev-master#11088fb",
         "phpunit/phpunit": "^4.8.2"
     },
     "autoload": {
