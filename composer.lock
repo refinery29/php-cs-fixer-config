@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d68149e9a0ca0d8b009292bce7e967c0",
-    "content-hash": "3b4fe48d486404056f3f0e0f62e5dac4",
+    "hash": "608dc218ef33d8f330f9d02ec69df8e1",
+    "content-hash": "2dfe0fa33a25a9a9903a54264fc492b0",
     "packages": [],
     "packages-dev": [
         {
@@ -126,12 +126,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfPHP/PHP-CS-Fixer.git",
-                "reference": "47dd44c"
+                "reference": "11088fb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfPHP/PHP-CS-Fixer/zipball/47dd44c74d55160a0c46f6d732024a41dcf9a6bc",
-                "reference": "47dd44c",
+                "url": "https://api.github.com/repos/FriendsOfPHP/PHP-CS-Fixer/zipball/11088fbb819088308d297c34860b3dde5411fc9a",
+                "reference": "11088fb",
                 "shasum": ""
             },
             "require": {
@@ -141,7 +141,8 @@
                 "symfony/console": "^2.3 || ^3.0",
                 "symfony/event-dispatcher": "^2.1 || ^3.0",
                 "symfony/filesystem": "^2.1 || ^3.0",
-                "symfony/finder": "^2.1 || ^3.0",
+                "symfony/finder": "^2.2 || ^3.0",
+                "symfony/polyfill-php54": "^1.0",
                 "symfony/process": "^2.3 || ^3.0",
                 "symfony/stopwatch": "^2.5 || ^3.0"
             },
@@ -177,7 +178,7 @@
                 }
             ],
             "description": "A tool to automatically fix PHP code style",
-            "time": "2016-02-14 17:41:41"
+            "time": "2016-02-15 23:01:28"
         },
         {
             "name": "guzzle/guzzle",
@@ -1546,6 +1547,64 @@
             "keywords": [
                 "compatibility",
                 "mbstring",
+                "polyfill",
+                "portable",
+                "shim"
+            ],
+            "time": "2016-01-20 09:13:37"
+        },
+        {
+            "name": "symfony/polyfill-php54",
+            "version": "v1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/polyfill-php54.git",
+                "reference": "74663d5a2ff3c530c1bc0571500e0feec9094054"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/polyfill-php54/zipball/74663d5a2ff3c530c1bc0571500e0feec9094054",
+                "reference": "74663d5a2ff3c530c1bc0571500e0feec9094054",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Polyfill\\Php54\\": ""
+                },
+                "files": [
+                    "bootstrap.php"
+                ],
+                "classmap": [
+                    "Resources/stubs"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony polyfill backporting some PHP 5.4+ features to lower PHP versions",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "compatibility",
                 "polyfill",
                 "portable",
                 "shim"
