@@ -168,7 +168,7 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
             'php_unit_strict' => 'it changes behaviour',
             'print_to_echo' => 'we have not decided to use this one (yet)',
             'psr0' => 'we are using PSR-4',
-            'strict' => 'it changes behaviour',
+            'strict_comparison' => 'it changes behaviour',
             'strict_param' => 'it changes behaviour',
         ];
 
@@ -202,8 +202,8 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
         return [
             'blank_line_after_opening_tag' => true,
             'blank_line_before_return' => true,
+            'cast_spaces' => true,
             'concat_without_spaces' => false,
-            'double_arrow_no_multiline_whitespace' => true,
             'function_typehint_space' => true,
             'hash_to_slash_comment' => true,
             'heredoc_to_nowdoc' => false,
@@ -220,6 +220,7 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
             'no_extra_consecutive_blank_lines' => true,
             'no_leading_import_slash' => true,
             'no_leading_namespace_whitespace' => true,
+            'no_multiline_whitespace_around_double_arrow' => true,
             'no_short_bool_cast' => true,
             'no_singleline_whitespace_before_semicolons' => true,
             'no_trailing_comma_in_list_call' => true,
@@ -252,7 +253,6 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
             'single_blank_line_before_namespace' => true,
             'single_quote' => true,
             'space_after_semicolon' => true,
-            'spaces_cast' => true,
             'standardize_not_equals' => true,
             'ternary_operator_spaces' => true,
             'trailing_comma_in_multiline_array' => true,
@@ -293,7 +293,7 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
             'php_unit_strict' => false,
             'psr0' => false,
             'short_array_syntax' => true,
-            'strict' => false,
+            'strict_comparison' => false,
             'strict_param' => false,
         ];
     }
