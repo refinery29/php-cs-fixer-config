@@ -140,6 +140,7 @@ class Refinery29 extends Config
         $rules = [
             'align_double_arrow' => false,
             'align_equals' => false,
+            'combine_consecutive_unsets' => true,
             'concat_with_spaces' => true,
             'ereg_to_preg' => false,
             'echo_to_print' => false,
