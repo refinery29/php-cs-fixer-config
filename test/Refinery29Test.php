@@ -203,6 +203,7 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
             'blank_line_after_opening_tag' => true,
             'blank_line_before_return' => true,
             'cast_spaces' => true,
+            'combine_consecutive_unsets' => true,
             'concat_without_spaces' => false,
             'function_typehint_space' => true,
             'hash_to_slash_comment' => true,
