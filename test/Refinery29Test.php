@@ -239,6 +239,7 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
             'phpdoc_no_package' => true,
             'phpdoc_scalar' => true,
             'phpdoc_separation' => true,
+            'phpdoc_single_line_var_spacing' => true,
             'phpdoc_summary' => false,
             'phpdoc_to_comment' => true,
             'phpdoc_trim' => true,
