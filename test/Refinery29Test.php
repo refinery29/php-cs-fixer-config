@@ -203,7 +203,6 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
             'blank_line_after_opening_tag' => true,
             'blank_line_before_return' => true,
             'cast_spaces' => true,
-            'combine_consecutive_unsets' => true,
             'concat_without_spaces' => false,
             'function_typehint_space' => true,
             'hash_to_slash_comment' => true,
@@ -273,6 +272,7 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
         return [
             'align_double_arrow' => false,
             'align_equals' => false,
+            'combine_consecutive_unsets' => true,
             'concat_with_spaces' => true,
             'ereg_to_preg' => false,
             'echo_to_print' => false,
