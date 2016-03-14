@@ -1,4 +1,4 @@
-/bin                export-ignore
+/.github/           export-ignore
 /test               export-ignore
 /.codeclimate.yml   export-ignore
 /.gitattributes     export-ignore

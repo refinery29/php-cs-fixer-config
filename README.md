@@ -187,6 +187,10 @@ echo "pre commit hook finish"
 
 :bulb: See https://gist.github.com/jwage/c4ef1dcb95007b5be0da by [@jwage](http://github.com/jwage) (adjusted by [@rcatlin](http://github.com/rcatlin) for [@refinery29](http://github.com/refinery29)).
 
+## Contributing
+
+Please have a look at [CONTRIBUTING.md](.github/CONTRIBUTING.md).
+
 ## License
 
 This package is licensed using the MIT License.
