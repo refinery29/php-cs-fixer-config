@@ -6,6 +6,7 @@
  * For the full copyright and license information, please view
  * the LICENSE file that was distributed with this source code.
  */
+
 namespace Refinery29\CS\Config\Test;
 
 use PhpCsFixer\ConfigInterface;
@@ -284,6 +285,7 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
             'linebreak_after_opening_tag' => true,
             'long_array_syntax' => false,
             'no_blank_lines_before_namespace' => true,
+            'no_empty_comment' => true,
             'no_multiline_whitespaces_before_semicolon' => false,
             'no_php4_constructor' => false,
             'no_short_echo_tag' => true,

@@ -6,6 +6,7 @@
  * For the full copyright and license information, please view
  * the LICENSE file that was distributed with this source code.
  */
+
 namespace Refinery29\CS\Config;
 
 use PhpCsFixer\Config;
@@ -150,6 +151,7 @@ class Refinery29 extends Config
             'long_array_syntax' => false,
             'modernize_types_casting' => false,
             'no_blank_lines_before_namespace' => true,
+            'no_empty_comment' => true,
             'no_multiline_whitespaces_before_semicolon' => false,
             'no_php4_constructor' => false,
             'no_short_echo_tag' => true,
