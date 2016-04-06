@@ -274,7 +274,7 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
     /**
      * @return array
      */
-    protected function getContribRules()
+    private function getContribRules()
     {
         return [
             'align_double_arrow' => false,
