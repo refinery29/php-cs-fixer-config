@@ -138,7 +138,7 @@ class Refinery29 extends Config
     /**
      * @return array
      */
-    protected function getContribRules()
+    private function getContribRules()
     {
         $rules = [
             'align_double_arrow' => false,
