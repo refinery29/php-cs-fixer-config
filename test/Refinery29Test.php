@@ -93,29 +93,6 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @param array  $expected
-     * @param array  $actual
-     * @param string $set
-     */
-    private function assertHasRules(array $expected, array $actual, $set)
-    {
-        foreach ($expected as $fixer => $isEnabled) {
-            $this->assertArrayHasKey($fixer, $actual, sprintf(
-                'Failed to assert that a rule for fixer "%s" (in set "%s") exists.,',
-                $fixer,
-                $set
-            ));
-
-            $this->assertSame($isEnabled, $actual[$fixer], sprintf(
-                'Failed to assert that fixer "%s" (in set "%s") is %s.',
-                $fixer,
-                $set,
-                $isEnabled === true ? 'enabled' : 'disabled'
-            ));
-        }
-    }
-
-    /**
      * @dataProvider providerDoesNotHaveFixerEnabled
      *
      * @param string $fixer
@@ -187,6 +164,29 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
         }
 
         return $data;
+    }
+
+    /**
+     * @param array  $expected
+     * @param array  $actual
+     * @param string $set
+     */
+    private function assertHasRules(array $expected, array $actual, $set)
+    {
+        foreach ($expected as $fixer => $isEnabled) {
+            $this->assertArrayHasKey($fixer, $actual, sprintf(
+                'Failed to assert that a rule for fixer "%s" (in set "%s") exists.,',
+                $fixer,
+                $set
+            ));
+
+            $this->assertSame($isEnabled, $actual[$fixer], sprintf(
+                'Failed to assert that fixer "%s" (in set "%s") is %s.',
+                $fixer,
+                $set,
+                $isEnabled === true ? 'enabled' : 'disabled'
+            ));
+        }
     }
 
     /**
