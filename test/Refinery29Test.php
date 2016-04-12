@@ -93,29 +93,6 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @param array  $expected
-     * @param array  $actual
-     * @param string $set
-     */
-    private function assertHasRules(array $expected, array $actual, $set)
-    {
-        foreach ($expected as $fixer => $isEnabled) {
-            $this->assertArrayHasKey($fixer, $actual, sprintf(
-                'Failed to assert that a rule for fixer "%s" (in set "%s") exists.,',
-                $fixer,
-                $set
-            ));
-
-            $this->assertSame($isEnabled, $actual[$fixer], sprintf(
-                'Failed to assert that fixer "%s" (in set "%s") is %s.',
-                $fixer,
-                $set,
-                $isEnabled === true ? 'enabled' : 'disabled'
-            ));
-        }
-    }
-
-    /**
      * @dataProvider providerDoesNotHaveFixerEnabled
      *
      * @param string $fixer
@@ -165,7 +142,6 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
             'no_php4_constructor' => 'it changes behaviour',
             'not_operators_with_space' => 'we do not need leading and trailing whitespace before !',
             'not_operator_with_successor_space' => 'we have not decided to use this one (yet)',
-            'ordered_class_elements' => 'we have not decided to use this one (yet)',
             'phpdoc_property' => 'we have not decided to use this one (yet)',
             'phpdoc_var_to_type' => 'it conflicts with phpdoc_type_to_var (which is enabled)',
             'php_unit_construct' => 'it changes behaviour',
@@ -188,6 +164,29 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
         }
 
         return $data;
+    }
+
+    /**
+     * @param array  $expected
+     * @param array  $actual
+     * @param string $set
+     */
+    private function assertHasRules(array $expected, array $actual, $set)
+    {
+        foreach ($expected as $fixer => $isEnabled) {
+            $this->assertArrayHasKey($fixer, $actual, sprintf(
+                'Failed to assert that a rule for fixer "%s" (in set "%s") exists.,',
+                $fixer,
+                $set
+            ));
+
+            $this->assertSame($isEnabled, $actual[$fixer], sprintf(
+                'Failed to assert that fixer "%s" (in set "%s") is %s.',
+                $fixer,
+                $set,
+                $isEnabled === true ? 'enabled' : 'disabled'
+            ));
+        }
     }
 
     /**
@@ -296,7 +295,7 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
             'no_useless_return' => true,
             'not_operators_with_space' => false,
             'not_operator_with_successor_space' => false,
-            'ordered_class_elements' => false,
+            'ordered_class_elements' => true,
             'ordered_imports' => true,
             'phpdoc_order' => true,
             'phpdoc_property' => false,
