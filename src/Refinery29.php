@@ -160,7 +160,7 @@ class Refinery29 extends Config
             'no_useless_return' => true,
             'not_operators_with_space' => false,
             'not_operator_with_successor_space' => false,
-            'ordered_class_elements' => true,
+            'ordered_class_elements' => false,
             'ordered_imports' => true,
             'phpdoc_order' => true,
             'phpdoc_property' => false,
