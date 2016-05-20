@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "3012a9ba94e872abe9f2640f87ad5606",
-    "content-hash": "bee2c6352ff30e9d81c2d8819a31380f",
+    "hash": "20e0e4e7e0f5a2a65cb1092b1d1baac2",
+    "content-hash": "39d571fe5c33d615fa6a241e05e0d6db",
     "packages": [
         {
             "name": "fabpot/php-cs-fixer",
@@ -13,12 +13,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfPHP/PHP-CS-Fixer.git",
-                "reference": "8548d19"
+                "reference": "62898ea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfPHP/PHP-CS-Fixer/zipball/8548d19d477bb9f782b1a34d741721bb8a79cd4a",
-                "reference": "8548d19",
+                "url": "https://api.github.com/repos/FriendsOfPHP/PHP-CS-Fixer/zipball/62898ea",
+                "reference": "62898ea",
                 "shasum": ""
             },
             "require": {
@@ -27,7 +27,7 @@
                 "sebastian/diff": "^1.1",
                 "symfony/console": "^2.3 || ^3.0",
                 "symfony/event-dispatcher": "^2.1 || ^3.0",
-                "symfony/filesystem": "^2.1 || ^3.0",
+                "symfony/filesystem": "^2.7 || ^3.0",
                 "symfony/finder": "^2.2 || ^3.0",
                 "symfony/polyfill-php54": "^1.0",
                 "symfony/process": "^2.3 || ^3.0",
@@ -65,7 +65,7 @@
                 }
             ],
             "description": "A tool to automatically fix PHP code style",
-            "time": "2016-04-17 21:27:07"
+            "time": "2016-05-19 19:19:42"
         },
         {
             "name": "sebastian/diff",
