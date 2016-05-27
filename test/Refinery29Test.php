@@ -221,8 +221,6 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
             'no_alias_functions' => true,
             'no_blank_lines_after_class_opening' => true,
             'no_blank_lines_after_phpdoc' => true,
-            'no_blank_lines_between_uses' => true,
-            'no_duplicate_semicolons' => true,
             'no_empty_statement' => true,
             'no_extra_consecutive_blank_lines' => true,
             'no_leading_import_slash' => true,
