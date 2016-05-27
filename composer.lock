@@ -4,21 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "20e0e4e7e0f5a2a65cb1092b1d1baac2",
-    "content-hash": "39d571fe5c33d615fa6a241e05e0d6db",
+    "hash": "aad8f5f02d29aa2de2181139218f4b35",
+    "content-hash": "786ab9577b82026341adfcd31949f88b",
     "packages": [
         {
             "name": "fabpot/php-cs-fixer",
-            "version": "dev-master",
+            "version": "v2.0.0-alpha",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfPHP/PHP-CS-Fixer.git",
-                "reference": "62898ea"
+                "reference": "d0d76b434728fcf522270b67b454ed7e84e850ed"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfPHP/PHP-CS-Fixer/zipball/62898ea",
-                "reference": "62898ea",
+                "url": "https://api.github.com/repos/FriendsOfPHP/PHP-CS-Fixer/zipball/d0d76b434728fcf522270b67b454ed7e84e850ed",
+                "reference": "d0d76b434728fcf522270b67b454ed7e84e850ed",
                 "shasum": ""
             },
             "require": {
@@ -65,7 +65,7 @@
                 }
             ],
             "description": "A tool to automatically fix PHP code style",
-            "time": "2016-05-19 19:19:42"
+            "time": "2016-05-26 23:59:22"
         },
         {
             "name": "sebastian/diff",
@@ -1761,7 +1761,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "fabpot/php-cs-fixer": 20
+        "fabpot/php-cs-fixer": 15
     },
     "prefer-stable": false,
     "prefer-lowest": false,
