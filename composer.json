@@ -1,6 +1,6 @@
 {
     "name": "refinery29/php-cs-fixer-config",
-    "description": "Provides a configuration for fabpot/php-cs-fixer, used within Refinery29.",
+    "description": "Provides a configuration for friendsofphp/php-cs-fixer, used within Refinery29.",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -11,7 +11,7 @@
     ],
     "require": {
         "php": "^5.5 || ^7.0",
-        "fabpot/php-cs-fixer": "2.0.0-alpha"
+        "friendsofphp/php-cs-fixer": "2.0.0-alpha"
     },
     "require-dev": {
         "codeclimate/php-test-reporter": "0.3.0",
