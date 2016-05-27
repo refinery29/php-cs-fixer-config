@@ -93,82 +93,6 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @dataProvider providerDoesNotHaveFixerEnabled
-     *
-     * @param string $fixer
-     * @param string $reason
-     */
-    public function testDoesNotHaveRulesEnabled($fixer, $reason)
-    {
-        $config = new Refinery29();
-
-        $rule = [
-            $fixer => false,
-        ];
-
-        $this->assertArraySubset($rule, $config->getRules(), true, sprintf(
-            'Fixer "%s" should not be enabled, because "%s"',
-            $fixer,
-            $reason
-        ));
-    }
-
-    /**
-     * @return array
-     */
-    public function providerDoesNotHaveFixerEnabled()
-    {
-        $fixers = [
-            /*
-             * Symfony
-             */
-            'concat_without_spaces' => 'it conflicts with concat_with_spaces (which is enabled)',
-            'heredoc_to_nowdoc' => 'we have not decided to use this one (yet)',
-            'self_accessor' => 'it causes an edge case error',
-            'phpdoc_summary' => 'we have not decided to use this one (yet)',
-            /*
-             * Contrib
-             */
-            'align_double_arrow' => 'it conflicts with unalign_double_arrow (which is enabled)',
-            'align_equals' => 'it conflicts with unalign_double (yet to be enabled)',
-            'dir_constant' => 'it is a risky fixer',
-            'echo_to_print' => 'we have not decided to use this one (yet)',
-            'ereg_to_preg' => 'it changes behaviour',
-            'header_comment' => 'it is not enabled by default',
-            'long_array_syntax' => 'it conflicts with short_array_syntax (which is enabled)',
-            'modernize_types_casting' => 'it is a risky fixer',
-            'no_blank_lines_before_namespace' => 'it conflicts with single_blank_line_before_namespace fixer',
-            'no_multiline_whitespace_before_semicolons' => 'we have not decided to use this one (yet)',
-            'no_php4_constructor' => 'it changes behaviour',
-            'no_useless_else' => 'has issues with edge cases, see https://github.com/FriendsOfPHP/PHP-CS-Fixer/issues/1923',
-            'not_operator_with_space' => 'we do not need leading and trailing whitespace before !',
-            'not_operator_with_successor_space' => 'we have not decided to use this one (yet)',
-            'ordered_class_elements' => 'we have not decided to use this one (yet)',
-            'phpdoc_property' => 'we have not decided to use this one (yet)',
-            'phpdoc_var_to_type' => 'it conflicts with phpdoc_type_to_var (which is enabled)',
-            'php_unit_construct' => 'it changes behaviour',
-            'php_unit_dedicate_assert' => 'it is a risky fixer',
-            'php_unit_strict' => 'it changes behaviour',
-            'print_to_echo' => 'we have not decided to use this one (yet)',
-            'psr0' => 'we are using PSR-4',
-            'random_api_migration' => 'it is a risky fixer',
-            'strict_comparison' => 'it changes behaviour',
-            'strict_param' => 'it changes behaviour',
-        ];
-
-        $data = [];
-
-        foreach ($fixers as $fixer => $reason) {
-            $data[] = [
-                $fixer,
-                $reason,
-            ];
-        }
-
-        return $data;
-    }
-
-    /**
      * @param array  $expected
      * @param array  $actual
      * @param string $set
@@ -210,10 +134,10 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
             'blank_line_after_opening_tag' => true,
             'blank_line_before_return' => true,
             'cast_spaces' => true,
-            'concat_without_spaces' => false,
+            'concat_without_spaces' => false, // conflicts with concat_with_spaces (which is enabled)
             'function_typehint_space' => true,
             'hash_to_slash_comment' => true,
-            'heredoc_to_nowdoc' => false,
+            'heredoc_to_nowdoc' => false, // have not decided to use this one (yet)
             'include' => true,
             'lowercase_cast' => true,
             'method_separation' => true,
@@ -247,15 +171,15 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
             'phpdoc_scalar' => true,
             'phpdoc_separation' => true,
             'phpdoc_single_line_var_spacing' => true,
-            'phpdoc_summary' => false,
+            'phpdoc_summary' => false, // have not decided to use this one (yet)
             'phpdoc_to_comment' => true,
             'phpdoc_trim' => true,
             'phpdoc_type_to_var' => true,
             'phpdoc_types' => true,
             'phpdoc_var_without_name' => true,
             'pre_increment' => true,
-            'print_to_echo' => false,
-            'self_accessor' => false,
+            'print_to_echo' => false, // have not decided to use this one (yet)
+            'self_accessor' => false, // it causes an edge case error
             'short_scalar_cast' => true,
             'simplified_null_return' => true,
             'single_blank_line_before_namespace' => true,
@@ -278,35 +202,40 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
     private function getContribRules()
     {
         return [
-            'align_double_arrow' => false,
-            'align_equals' => false,
+            'align_double_arrow' => false, // conflicts with unalign_double_arrow (which is enabled)
+            'align_equals' => false, // conflicts with unalign_double (yet to be enabled)
             'combine_consecutive_unsets' => true,
             'concat_with_spaces' => true,
-            'ereg_to_preg' => false,
-            'echo_to_print' => false,
-            'header_comment' => false,
+            'dir_constant' => false, // risky
+            'echo_to_print' => false, // have not decided to use this one (yet)
+            'ereg_to_preg' => false, // risky
+            'header_comment' => false, // not enabled by default
             'linebreak_after_opening_tag' => true,
-            'long_array_syntax' => false,
-            'no_blank_lines_before_namespace' => false,
+            'long_array_syntax' => false, // conflicts with short_array_syntax (which is enabled)
+            'modernize_types_casting' => false, // risky
+            'no_blank_lines_before_namespace' => false, // conflicts with single_blank_line_before_namespace (which is enabled)
             'no_empty_comment' => true,
-            'no_multiline_whitespace_before_semicolons' => false,
-            'no_php4_constructor' => false,
+            'no_multiline_whitespace_before_semicolons' => false, // have not decided to use this one (yet)
+            'no_php4_constructor' => false, // risky
             'no_short_echo_tag' => true,
-            'no_useless_else' => false,
+            'no_useless_else' => false, // has issues with edge cases, see https://github.com/FriendsOfPHP/PHP-CS-Fixer/issues/1923
             'no_useless_return' => true,
-            'not_operator_with_space' => false,
-            'not_operator_with_successor_space' => false,
-            'ordered_class_elements' => false,
+            'not_operator_with_space' => false, // have decided not to use it
+            'not_operator_with_successor_space' => false, // have decided not to use it
+            'ordered_class_elements' => false, // have decided not to use it, impossible to review in large legacy code base
             'ordered_imports' => true,
             'phpdoc_order' => true,
-            'phpdoc_property' => false,
-            'phpdoc_var_to_type' => false,
-            'php_unit_construct' => false,
-            'php_unit_strict' => false,
-            'psr0' => false,
+            'phpdoc_property' => false, // have not decided to use this one (yet)
+            'phpdoc_var_to_type' => false, // conflicts with phpdoc_type_to_var (which is enabled)
+            'php_unit_construct' => false, // risky
+            'php_unit_dedicate_assert' => false, // risky
+            'php_unit_strict' => false, // risky
+            'print_to_echo' => false, // have not decided to use this one (yet)
+            'psr0' => false, // using PSR-4
+            'random_api_migration' => false, // risky
             'short_array_syntax' => true,
-            'strict_comparison' => false,
-            'strict_param' => false,
+            'strict_comparison' => false, // risky
+            'strict_param' => false, // risky
         ];
     }
 }
