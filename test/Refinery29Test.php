@@ -291,6 +291,7 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
             'no_multiline_whitespaces_before_semicolon' => false,
             'no_php4_constructor' => false,
             'no_short_echo_tag' => true,
+            'no_useless_else' => true,
             'no_useless_return' => true,
             'not_operators_with_space' => false,
             'not_operator_with_successor_space' => false,
