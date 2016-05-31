@@ -171,7 +171,7 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
             'phpdoc_scalar' => true,
             'phpdoc_separation' => true,
             'phpdoc_single_line_var_spacing' => true,
-            'phpdoc_summary' => false, // have not decided to use this one (yet)
+            'phpdoc_summary' => true,
             'phpdoc_to_comment' => true,
             'phpdoc_trim' => true,
             'phpdoc_type_to_var' => true,
