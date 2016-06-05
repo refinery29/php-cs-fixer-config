@@ -14,7 +14,7 @@
         "friendsofphp/php-cs-fixer": "2.0.0-alpha"
     },
     "require-dev": {
-        "codeclimate/php-test-reporter": "0.3.0",
+        "codeclimate/php-test-reporter": "0.3.2",
         "phpunit/phpunit": "^4.8.26"
     },
     "autoload": {
