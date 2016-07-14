@@ -40,7 +40,7 @@ class Refinery29 extends Config
 
     public function getRiskyAllowed()
     {
-        return false;
+        return true;
     }
 
     public function getRules()
@@ -149,7 +149,7 @@ class Refinery29 extends Config
             'header_comment' => false,
             'linebreak_after_opening_tag' => true,
             'long_array_syntax' => false,
-            'modernize_types_casting' => false,
+            'modernize_types_casting' => true,
             'no_blank_lines_before_namespace' => false,
             'no_empty_comment' => true,
             'no_multiline_whitespace_before_semicolons' => false,
