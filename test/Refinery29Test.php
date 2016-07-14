@@ -29,7 +29,7 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
         $this->assertSame('The configuration for Refinery29 PHP applications', $config->getDescription());
         $this->assertTrue($config->usingCache());
         $this->assertTrue($config->usingLinter());
-        $this->assertFalse($config->getRiskyAllowed());
+        $this->assertTrue($config->getRiskyAllowed());
     }
 
     public function testHasPsr2Rules()
@@ -212,7 +212,7 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
             'header_comment' => false, // not enabled by default
             'linebreak_after_opening_tag' => true,
             'long_array_syntax' => false, // conflicts with short_array_syntax (which is enabled)
-            'modernize_types_casting' => false, // risky
+            'modernize_types_casting' => true,
             'no_blank_lines_before_namespace' => false, // conflicts with single_blank_line_before_namespace (which is enabled)
             'no_empty_comment' => true,
             'no_multiline_whitespace_before_semicolons' => false, // have not decided to use this one (yet)
