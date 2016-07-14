@@ -152,7 +152,7 @@ class Refinery29 extends Config
             'modernize_types_casting' => true,
             'no_blank_lines_before_namespace' => false,
             'no_empty_comment' => true,
-            'no_multiline_whitespace_before_semicolons' => false,
+            'no_multiline_whitespace_before_semicolons' => true,
             'no_php4_constructor' => false,
             'no_short_echo_tag' => true,
             'no_useless_else' => false,

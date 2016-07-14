@@ -215,7 +215,7 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
             'modernize_types_casting' => true,
             'no_blank_lines_before_namespace' => false, // conflicts with single_blank_line_before_namespace (which is enabled)
             'no_empty_comment' => true,
-            'no_multiline_whitespace_before_semicolons' => false, // have not decided to use this one (yet)
+            'no_multiline_whitespace_before_semicolons' => true,
             'no_php4_constructor' => false, // risky
             'no_short_echo_tag' => true,
             'no_useless_else' => false, // has issues with edge cases, see https://github.com/FriendsOfPHP/PHP-CS-Fixer/issues/1923
