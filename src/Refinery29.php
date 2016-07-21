@@ -68,6 +68,7 @@ class Refinery29 extends Config
     private function getSymfonyRules()
     {
         return [
+            'binary_operator_spaces' => true,
             'blank_line_after_opening_tag' => true,
             'blank_line_before_return' => true,
             'cast_spaces' => true,
