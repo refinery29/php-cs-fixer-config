@@ -225,12 +225,12 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
             'not_operator_with_successor_space' => false, // have decided not to use it
             'ordered_class_elements' => false, // have decided not to use it, impossible to review in large legacy code base
             'ordered_imports' => true,
-            'phpdoc_order' => true,
-            'phpdoc_property' => false, // have not decided to use this one (yet)
-            'phpdoc_var_to_type' => false, // conflicts with phpdoc_type_to_var (which is enabled)
             'php_unit_construct' => false, // risky
             'php_unit_dedicate_assert' => false, // risky
             'php_unit_strict' => false, // risky
+            'phpdoc_order' => true,
+            'phpdoc_property' => false, // have not decided to use this one (yet)
+            'phpdoc_var_to_type' => false, // conflicts with phpdoc_type_to_var (which is enabled)
             'print_to_echo' => false, // have not decided to use this one (yet)
             'psr0' => false, // using PSR-4
             'random_api_migration' => false, // risky
