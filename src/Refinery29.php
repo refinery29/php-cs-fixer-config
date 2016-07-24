@@ -84,6 +84,7 @@ class Refinery29 extends Config
             'no_alias_functions' => true,
             'no_blank_lines_after_class_opening' => true,
             'no_blank_lines_after_phpdoc' => true,
+            'no_empty_phpdoc' => true,
             'no_empty_statement' => true,
             'no_extra_consecutive_blank_lines' => true,
             'no_leading_import_slash' => true,
