@@ -64,7 +64,7 @@ Update your `.travis.yml` to cache the `php_cs.cache` file:
 ```yml
 cache:
   directories:
-    - $HOME/.composer/cache
+    - $HOME/.php-cs-fixer
 ```
 
 Then run `php-cs-fixer` in the `script` section:
