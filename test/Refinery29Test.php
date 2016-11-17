@@ -36,10 +36,20 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
     {
         $config = new Refinery29();
 
-        $this->assertHasRules(
-            $this->getRules(),
-            $config->getRules()
-        );
+        $rules = $config->getRules();
+
+        foreach ($this->getRules() as $fixer => $isEnabled) {
+            $this->assertArrayHasKey($fixer, $rules, sprintf(
+                'Failed to assert that a rule for fixer "%s" exists.,',
+                $fixer
+            ));
+
+            $this->assertSame($isEnabled, $rules[$fixer], sprintf(
+                'Failed to assert that fixer "%s" is %s.',
+                $fixer,
+                $isEnabled === true ? 'enabled' : 'disabled'
+            ));
+        }
     }
 
     public function testDoesNotHaveHeaderCommentFixerByDefault()
@@ -75,18 +85,6 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
      */
     private function assertHasRules(array $expected, array $actual)
     {
-        foreach ($expected as $fixer => $isEnabled) {
-            $this->assertArrayHasKey($fixer, $actual, sprintf(
-                'Failed to assert that a rule for fixer "%s" exists.,',
-                $fixer
-            ));
-
-            $this->assertSame($isEnabled, $actual[$fixer], sprintf(
-                'Failed to assert that fixer "%s" is %s.',
-                $fixer,
-                $isEnabled === true ? 'enabled' : 'disabled'
-            ));
-        }
     }
 
     /**
