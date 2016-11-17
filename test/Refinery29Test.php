@@ -32,36 +32,13 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
         $this->assertTrue($config->getRiskyAllowed());
     }
 
-    public function testHasPsr2Rules()
+    public function testHasRules()
     {
         $config = new Refinery29();
 
         $this->assertHasRules(
-            $this->getPsr2Rules(),
-            $config->getRules(),
-            'PSR2'
-        );
-    }
-
-    public function testHasSymfonyRules()
-    {
-        $config = new Refinery29();
-
-        $this->assertHasRules(
-            $this->getSymfonyRules(),
-            $config->getRules(),
-            'Symfony'
-        );
-    }
-
-    public function testHasContribRules()
-    {
-        $config = new Refinery29();
-
-        $this->assertHasRules(
-            $this->getContribRules(),
-            $config->getRules(),
-            'Contrib'
+            $this->getRules(),
+            $config->getRules()
         );
     }
 
@@ -93,23 +70,20 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @param array  $expected
-     * @param array  $actual
-     * @param string $set
+     * @param array $expected
+     * @param array $actual
      */
-    private function assertHasRules(array $expected, array $actual, $set)
+    private function assertHasRules(array $expected, array $actual)
     {
         foreach ($expected as $fixer => $isEnabled) {
             $this->assertArrayHasKey($fixer, $actual, sprintf(
-                'Failed to assert that a rule for fixer "%s" (in set "%s") exists.,',
-                $fixer,
-                $set
+                'Failed to assert that a rule for fixer "%s" exists.,',
+                $fixer
             ));
 
             $this->assertSame($isEnabled, $actual[$fixer], sprintf(
-                'Failed to assert that fixer "%s" (in set "%s") is %s.',
+                'Failed to assert that fixer "%s" is %s.',
                 $fixer,
-                $set,
                 $isEnabled === true ? 'enabled' : 'disabled'
             ));
         }
@@ -118,19 +92,10 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
     /**
      * @return array
      */
-    private function getPsr2Rules()
+    private function getRules()
     {
         return [
             '@PSR2' => true,
-        ];
-    }
-
-    /**
-     * @return array
-     */
-    private function getSymfonyRules()
-    {
-        return [
             'binary_operator_spaces' => true,
             'blank_line_after_opening_tag' => true,
             'blank_line_before_return' => true,
@@ -195,15 +160,6 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
             'unalign_equals' => true,
             'unary_operator_spaces' => true,
             'whitespace_after_comma_in_array' => true,
-        ];
-    }
-
-    /**
-     * @return array
-     */
-    private function getContribRules()
-    {
-        return [
             'align_double_arrow' => false, // conflicts with unalign_double_arrow (which is enabled)
             'align_equals' => false, // conflicts with unalign_double (yet to be enabled)
             'combine_consecutive_unsets' => true,
