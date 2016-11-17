@@ -45,29 +45,8 @@ class Refinery29 extends Config
 
     public function getRules()
     {
-        return array_merge(
-            $this->getPsr2Rules(),
-            $this->getSymfonyRules(),
-            $this->getContribRules()
-        );
-    }
-
-    /**
-     * @return array
-     */
-    private function getPsr2Rules()
-    {
-        return [
+        $rules = [
             '@PSR2' => true,
-        ];
-    }
-
-    /**
-     * @return array
-     */
-    private function getSymfonyRules()
-    {
-        return [
             'binary_operator_spaces' => true,
             'blank_line_after_opening_tag' => true,
             'blank_line_before_return' => true,
@@ -132,15 +111,6 @@ class Refinery29 extends Config
             'unalign_equals' => true,
             'unary_operator_spaces' => true,
             'whitespace_after_comma_in_array' => true,
-        ];
-    }
-
-    /**
-     * @return array
-     */
-    private function getContribRules()
-    {
-        $rules = [
             'align_double_arrow' => false,
             'align_equals' => false,
             'combine_consecutive_unsets' => true,
