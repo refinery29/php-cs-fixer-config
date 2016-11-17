@@ -164,7 +164,6 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
             'phpdoc_var_without_name' => true,
             'pre_increment' => true,
             'print_to_echo' => false, // have not decided to use this one (yet)
-            'print_to_echo' => false, // have not decided to use this one (yet)
             'psr0' => false, // using PSR-4
             'random_api_migration' => false, // risky
             'self_accessor' => false, // it causes an edge case error
