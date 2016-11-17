@@ -80,14 +80,6 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @param array $expected
-     * @param array $actual
-     */
-    private function assertHasRules(array $expected, array $actual)
-    {
-    }
-
-    /**
      * @return array
      */
     private function getRules()
