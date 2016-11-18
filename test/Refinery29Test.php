@@ -26,7 +26,6 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
         $config = new Refinery29();
 
         $this->assertSame('refinery29', $config->getName());
-        $this->assertSame('The configuration for Refinery29 PHP applications', $config->getDescription());
         $this->assertTrue($config->usingCache());
         $this->assertTrue($config->usingLinter());
         $this->assertTrue($config->getRiskyAllowed());

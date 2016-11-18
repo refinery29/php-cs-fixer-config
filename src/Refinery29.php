@@ -23,7 +23,7 @@ class Refinery29 extends Config
      */
     public function __construct($header = null)
     {
-        parent::__construct('refinery29', 'The configuration for Refinery29 PHP applications');
+        parent::__construct('refinery29');
 
         $this->header = $header;
     }
