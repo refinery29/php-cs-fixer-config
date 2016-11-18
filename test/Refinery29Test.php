@@ -92,9 +92,13 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
     {
         return [
             '@PSR2' => true,
-            'align_double_arrow' => false, // conflicts with unalign_double_arrow (which is enabled)
-            'align_equals' => false, // conflicts with unalign_double (yet to be enabled)
-            'binary_operator_spaces' => true,
+            'array_syntax' => [
+                'syntax' => 'short',
+            ],
+            'binary_operator_spaces' => [
+                'align_double_arrow' => false,
+                'align_equals' => false,
+            ],
             'blank_line_after_opening_tag' => true,
             'blank_line_before_return' => true,
             'cast_spaces' => true,
@@ -132,7 +136,7 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
             'no_short_bool_cast' => true,
             'no_short_echo_tag' => true,
             'no_singleline_whitespace_before_semicolons' => true,
-            'no_spaces_inside_offset' => true,
+            'no_spaces_around_offset' => true,
             'no_trailing_comma_in_list_call' => true,
             'no_trailing_comma_in_singleline_array' => true,
             'no_unneeded_control_parentheses' => true,
@@ -141,7 +145,7 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
             'no_useless_else' => false, // has issues with edge cases, see https://github.com/FriendsOfPHP/PHP-CS-Fixer/issues/1923
             'no_useless_return' => true,
             'no_whitespace_before_comma_in_array' => true,
-            'no_whitespace_in_blank_lines' => true,
+            'no_whitespace_in_blank_line' => true,
             'not_operator_with_space' => false, // have decided not to use it
             'not_operator_with_successor_space' => false, // have decided not to use it
             'object_operator_without_whitespace' => true,
@@ -173,7 +177,6 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
             'psr0' => false, // using PSR-4
             'random_api_migration' => false, // risky
             'self_accessor' => false, // it causes an edge case error
-            'short_array_syntax' => true,
             'short_scalar_cast' => true,
             'simplified_null_return' => true,
             'single_blank_line_before_namespace' => true,
@@ -185,8 +188,6 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
             'ternary_operator_spaces' => true,
             'trailing_comma_in_multiline_array' => true,
             'trim_array_spaces' => true,
-            'unalign_double_arrow' => true,
-            'unalign_equals' => true,
             'unary_operator_spaces' => true,
             'whitespace_after_comma_in_array' => true,
         ];

@@ -47,9 +47,13 @@ class Refinery29 extends Config
     {
         $rules = [
             '@PSR2' => true,
-            'align_double_arrow' => false,
-            'align_equals' => false,
-            'binary_operator_spaces' => true,
+            'array_syntax' => [
+                'syntax' => 'short',
+            ],
+            'binary_operator_spaces' => [
+                'align_double_arrow' => false,
+                'align_equals' => false,
+            ],
             'blank_line_after_opening_tag' => true,
             'blank_line_before_return' => true,
             'cast_spaces' => true,
@@ -87,7 +91,7 @@ class Refinery29 extends Config
             'no_short_bool_cast' => true,
             'no_short_echo_tag' => true,
             'no_singleline_whitespace_before_semicolons' => true,
-            'no_spaces_inside_offset' => true,
+            'no_spaces_around_offset' => true,
             'no_trailing_comma_in_list_call' => true,
             'no_trailing_comma_in_singleline_array' => true,
             'no_unneeded_control_parentheses' => true,
@@ -96,7 +100,7 @@ class Refinery29 extends Config
             'no_useless_else' => false,
             'no_useless_return' => true,
             'no_whitespace_before_comma_in_array' => true,
-            'no_whitespace_in_blank_lines' => true,
+            'no_whitespace_in_blank_line' => true,
             'not_operator_with_space' => false,
             'not_operator_with_successor_space' => false,
             'object_operator_without_whitespace' => true,
@@ -128,7 +132,6 @@ class Refinery29 extends Config
             'psr0' => false,
             'random_api_migration' => false,
             'self_accessor' => false,
-            'short_array_syntax' => true,
             'short_scalar_cast' => true,
             'simplified_null_return' => true,
             'single_blank_line_before_namespace' => true,
@@ -140,8 +143,6 @@ class Refinery29 extends Config
             'ternary_operator_spaces' => true,
             'trailing_comma_in_multiline_array' => true,
             'trim_array_spaces' => true,
-            'unalign_double_arrow' => true,
-            'unalign_equals' => true,
             'unary_operator_spaces' => true,
             'whitespace_after_comma_in_array' => true,
         ];
