@@ -4,36 +4,40 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "77114b0eb4963885ed1f80fada93650a",
-    "content-hash": "a82ba2df88ac5d0df4deb1f3ea909b86",
+    "hash": "acde3e411be198b65646b3e6e145cc66",
+    "content-hash": "7e81c33a0acf5cab950dc8cf0bada07e",
     "packages": [
         {
             "name": "friendsofphp/php-cs-fixer",
-            "version": "v2.0.0-alpha",
+            "version": "v2.0.0-RC",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfPHP/PHP-CS-Fixer.git",
-                "reference": "d0d76b434728fcf522270b67b454ed7e84e850ed"
+                "reference": "f88ef17f44fa442e1dd98deb7da0d943be9c8fa8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfPHP/PHP-CS-Fixer/zipball/d0d76b434728fcf522270b67b454ed7e84e850ed",
-                "reference": "d0d76b434728fcf522270b67b454ed7e84e850ed",
+                "url": "https://api.github.com/repos/FriendsOfPHP/PHP-CS-Fixer/zipball/f88ef17f44fa442e1dd98deb7da0d943be9c8fa8",
+                "reference": "f88ef17f44fa442e1dd98deb7da0d943be9c8fa8",
                 "shasum": ""
             },
             "require": {
                 "ext-tokenizer": "*",
-                "php": "^5.3.6 || ^7.0",
+                "php": "^5.3.6 || >=7.0 <7.2",
                 "sebastian/diff": "^1.1",
                 "symfony/console": "^2.3 || ^3.0",
                 "symfony/event-dispatcher": "^2.1 || ^3.0",
-                "symfony/filesystem": "^2.7 || ^3.0",
+                "symfony/filesystem": "^2.4 || ^3.0",
                 "symfony/finder": "^2.2 || ^3.0",
                 "symfony/polyfill-php54": "^1.0",
                 "symfony/process": "^2.3 || ^3.0",
                 "symfony/stopwatch": "^2.5 || ^3.0"
             },
+            "conflict": {
+                "hhvm": "<3.9"
+            },
             "require-dev": {
+                "phpunit/phpunit": "^4.5|^5",
                 "satooshi/php-coveralls": "^1.0"
             },
             "bin": [
@@ -65,7 +69,7 @@
                 }
             ],
             "description": "A tool to automatically fix PHP code style",
-            "time": "2016-05-26 23:59:22"
+            "time": "2016-11-12 22:43:36"
         },
         {
             "name": "sebastian/diff",
@@ -1910,7 +1914,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "friendsofphp/php-cs-fixer": 15
+        "friendsofphp/php-cs-fixer": 5
     },
     "prefer-stable": false,
     "prefer-lowest": false,

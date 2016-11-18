@@ -23,7 +23,7 @@ class Refinery29 extends Config
      */
     public function __construct($header = null)
     {
-        parent::__construct('refinery29', 'The configuration for Refinery29 PHP applications');
+        parent::__construct('refinery29');
 
         $this->header = $header;
     }
@@ -47,19 +47,28 @@ class Refinery29 extends Config
     {
         $rules = [
             '@PSR2' => true,
-            'align_double_arrow' => false,
-            'align_equals' => false,
-            'binary_operator_spaces' => true,
+            'array_syntax' => [
+                'syntax' => 'short',
+            ],
+            'binary_operator_spaces' => [
+                'align_double_arrow' => false,
+                'align_equals' => false,
+            ],
             'blank_line_after_opening_tag' => true,
             'blank_line_before_return' => true,
             'cast_spaces' => true,
+            'class_keyword_remove' => false,
             'combine_consecutive_unsets' => true,
             'concat_with_spaces' => true,
             'concat_without_spaces' => false,
+            'declare_equal_normalize' => false,
+            'declare_strict_types' => false,
             'dir_constant' => false,
             'echo_to_print' => false,
             'ereg_to_preg' => false,
             'function_typehint_space' => true,
+            'general_phpdoc_annotation_remove' => false,
+            'general_phpdoc_annotation_rename' => false,
             'hash_to_slash_comment' => true,
             'header_comment' => false,
             'heredoc_to_nowdoc' => false,
@@ -67,6 +76,7 @@ class Refinery29 extends Config
             'linebreak_after_opening_tag' => true,
             'long_array_syntax' => false,
             'lowercase_cast' => true,
+            'mb_str_functions' => false,
             'method_separation' => true,
             'modernize_types_casting' => true,
             'native_function_casing' => true,
@@ -87,7 +97,7 @@ class Refinery29 extends Config
             'no_short_bool_cast' => true,
             'no_short_echo_tag' => true,
             'no_singleline_whitespace_before_semicolons' => true,
-            'no_spaces_inside_offset' => true,
+            'no_spaces_around_offset' => true,
             'no_trailing_comma_in_list_call' => true,
             'no_trailing_comma_in_singleline_array' => true,
             'no_unneeded_control_parentheses' => true,
@@ -96,7 +106,8 @@ class Refinery29 extends Config
             'no_useless_else' => false,
             'no_useless_return' => true,
             'no_whitespace_before_comma_in_array' => true,
-            'no_whitespace_in_blank_lines' => true,
+            'no_whitespace_in_blank_line' => true,
+            'normalize_index_brace' => false,
             'not_operator_with_space' => false,
             'not_operator_with_successor_space' => false,
             'object_operator_without_whitespace' => true,
@@ -104,8 +115,10 @@ class Refinery29 extends Config
             'ordered_imports' => true,
             'php_unit_construct' => false,
             'php_unit_dedicate_assert' => false,
+            'php_unit_fqcn_annotation' => false,
             'php_unit_strict' => false,
             'phpdoc_align' => true,
+            'phpdoc_annotation_without_dot' => false,
             'phpdoc_indent' => true,
             'phpdoc_inline_tag' => true,
             'phpdoc_no_access' => true,
@@ -123,13 +136,18 @@ class Refinery29 extends Config
             'phpdoc_types' => true,
             'phpdoc_var_to_type' => false,
             'phpdoc_var_without_name' => true,
+            'pow_to_exponentiation' => false,
             'pre_increment' => true,
             'print_to_echo' => false,
+            'protected_to_private' => false,
             'psr0' => false,
+            'psr4' => false,
             'random_api_migration' => false,
+            'return_type_declaration' => false,
             'self_accessor' => false,
-            'short_array_syntax' => true,
+            'semicolon_after_instruction' => false,
             'short_scalar_cast' => true,
+            'silenced_deprecation_error' => false,
             'simplified_null_return' => true,
             'single_blank_line_before_namespace' => true,
             'single_quote' => true,
@@ -140,8 +158,6 @@ class Refinery29 extends Config
             'ternary_operator_spaces' => true,
             'trailing_comma_in_multiline_array' => true,
             'trim_array_spaces' => true,
-            'unalign_double_arrow' => true,
-            'unalign_equals' => true,
             'unary_operator_spaces' => true,
             'whitespace_after_comma_in_array' => true,
         ];
