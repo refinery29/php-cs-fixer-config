@@ -10,6 +10,8 @@
 namespace Refinery29\CS\Config\Test;
 
 use PhpCsFixer\ConfigInterface;
+use PhpCsFixer\FixerFactory;
+use PhpCsFixer\RuleSet;
 use Refinery29\CS\Config\Refinery29;
 
 class Refinery29Test extends \PHPUnit_Framework_TestCase
@@ -36,6 +38,24 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
         $config = new Refinery29();
 
         $this->assertEquals($this->getRules(), $config->getRules());
+    }
+
+    public function testHasRulesForBuiltInFixersOnly()
+    {
+        $config = new Refinery29();
+
+        $fixerFactory = FixerFactory::create();
+        $fixerFactory->registerBuiltInFixers();
+
+        try {
+            $fixerFactory->useRuleSet(RuleSet::create($config->getRules()));
+        } catch (\UnexpectedValueException $exception) {
+            $this->fail($exception->getMessage());
+
+            return;
+        }
+
+        $this->assertInstanceOf(FixerFactory::class, $fixerFactory);
     }
 
     public function testDoesNotHaveHeaderCommentFixerByDefault()
