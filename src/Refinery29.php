@@ -28,12 +28,7 @@ class Refinery29 extends Config
         $this->header = $header;
     }
 
-    public function usingCache()
-    {
-        return true;
-    }
-
-    public function usingLinter()
+    public function getUsingCache()
     {
         return true;
     }
