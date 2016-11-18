@@ -40,25 +40,7 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
         $this->assertEquals($this->getRules(), $config->getRules());
     }
 
-    public function testHasRulesForBuiltInFixersOnly()
-    {
-        $config = new Refinery29();
-
-        $fixerFactory = FixerFactory::create();
-        $fixerFactory->registerBuiltInFixers();
-
-        try {
-            $fixerFactory->useRuleSet(RuleSet::create($config->getRules()));
-        } catch (\UnexpectedValueException $exception) {
-            $this->fail($exception->getMessage());
-
-            return;
-        }
-
-        $this->assertInstanceOf(FixerFactory::class, $fixerFactory);
-    }
-
-    public function testHasRulesForAllBuiltInFixers()
+    public function testHasRulesForBuiltInFixers()
     {
         $config = new Refinery29();
 
@@ -74,7 +56,13 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
 
         $builtInFixers = $reflection->getValue($fixerFactory);
 
-        $fixerFactory->useRuleSet(RuleSet::create($config->getRules()));
+        try {
+            $fixerFactory->useRuleSet(RuleSet::create($config->getRules()));
+        } catch (\UnexpectedValueException $exception) {
+            $this->fail($exception->getMessage());
+
+            return;
+        }
 
         $configuredFixers = $reflection->getValue($fixerFactory);
 
