@@ -149,7 +149,7 @@ else
     echo ""
     echo "Please install php-cs-fixer, e.g.:"
     echo ""
-    echo "  composer require --dev fabpot/php-cs-fixer:dev-master"
+    echo "  composer require --dev friendsofphp/php-cs-fixer:2.0.0-RC"
     echo ""
 fi
 
