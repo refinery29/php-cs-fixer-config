@@ -26,21 +26,8 @@ class Refinery29 extends Config
         parent::__construct('refinery29');
 
         $this->header = $header;
-    }
 
-    public function usingCache()
-    {
-        return true;
-    }
-
-    public function usingLinter()
-    {
-        return true;
-    }
-
-    public function getRiskyAllowed()
-    {
-        return true;
+        $this->setRiskyAllowed(true);
     }
 
     public function getRules()
