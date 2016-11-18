@@ -58,6 +58,61 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
         $this->assertInstanceOf(FixerFactory::class, $fixerFactory);
     }
 
+    public function testHasRulesForAllBuiltInFixers()
+    {
+        $config = new Refinery29();
+
+        $fixerFactory = FixerFactory::create();
+        $fixerFactory->registerBuiltInFixers();
+
+        $reflection = new \ReflectionProperty(
+            FixerFactory::class,
+            'fixersByName'
+        );
+
+        $reflection->setAccessible(true);
+
+        $builtInFixers = $reflection->getValue($fixerFactory);
+
+        $fixerFactory->useRuleSet(RuleSet::create($config->getRules()));
+
+        $configuredFixers = $reflection->getValue($fixerFactory);
+
+        /*
+         * Before comparing if we have rules for all built-in fixers, remove the rules for built-in fixers which we have
+         * explicitly disabled, as RuleSet::resolveSet() will filter out disabled rules.
+         *
+         * @see RuleSet::create()
+         * @see RuleSet::resolveSet()
+         */
+        foreach ($config->getRules() as $rule => $ruleConfiguration) {
+            if ($ruleConfiguration === false) {
+                unset($builtInFixers[$rule]);
+            }
+        }
+
+        $builtInRules = $this->removeValues($builtInFixers);
+        $configuredRules = $this->removeValues($configuredFixers);
+
+        ksort($builtInRules);
+        ksort($configuredRules);
+
+        $this->assertEquals($builtInRules, $configuredRules);
+    }
+
+    /**
+     * @param array $data
+     *
+     * @return array
+     */
+    private function removeValues(array $data)
+    {
+        return array_combine(
+            array_keys($data),
+            array_fill(0, count($data), true)
+        );
+    }
+
     public function testDoesNotHaveHeaderCommentFixerByDefault()
     {
         $config = new Refinery29();
