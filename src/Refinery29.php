@@ -130,7 +130,7 @@ class Refinery29 extends Config
             'psr0' => false,
             'psr4' => false,
             'random_api_migration' => false,
-            'return_type_declaration' => false,
+            'return_type_declaration' => true,
             'self_accessor' => false,
             'semicolon_after_instruction' => false,
             'short_scalar_cast' => true,
