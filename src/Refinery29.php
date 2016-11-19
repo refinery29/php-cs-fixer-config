@@ -132,7 +132,7 @@ class Refinery29 extends Config
             'random_api_migration' => false,
             'return_type_declaration' => false,
             'self_accessor' => false,
-            'semicolon_after_instruction' => false,
+            'semicolon_after_instruction' => true,
             'short_scalar_cast' => true,
             'silenced_deprecation_error' => false,
             'simplified_null_return' => true,
