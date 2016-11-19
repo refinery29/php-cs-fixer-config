@@ -94,7 +94,7 @@ class Refinery29 extends Config
             'no_useless_return' => true,
             'no_whitespace_before_comma_in_array' => true,
             'no_whitespace_in_blank_line' => true,
-            'normalize_index_brace' => false,
+            'normalize_index_brace' => true,
             'not_operator_with_space' => false,
             'not_operator_with_successor_space' => false,
             'object_operator_without_whitespace' => true,
