@@ -232,7 +232,7 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
             'random_api_migration' => false, // risky
             'return_type_declaration' => true,
             'self_accessor' => false, // it causes an edge case error
-            'semicolon_after_instruction' => false, // have not decided to use this one (yet)
+            'semicolon_after_instruction' => true,
             'short_scalar_cast' => true,
             'silenced_deprecation_error' => false, // have not decided to use this one (yet)
             'simplified_null_return' => true,
