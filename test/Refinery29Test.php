@@ -230,7 +230,7 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
             'psr0' => false, // using PSR-4
             'psr4' => false, // have not decided to use this one (yet)
             'random_api_migration' => false, // risky
-            'return_type_declaration' => false, // have not decided to use this one (yet)
+            'return_type_declaration' => true,
             'self_accessor' => false, // it causes an edge case error
             'semicolon_after_instruction' => false, // have not decided to use this one (yet)
             'short_scalar_cast' => true,
