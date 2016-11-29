@@ -102,7 +102,7 @@ class Refinery29 extends Config
             'ordered_imports' => true,
             'php_unit_construct' => false,
             'php_unit_dedicate_assert' => false,
-            'php_unit_fqcn_annotation' => false,
+            'php_unit_fqcn_annotation' => true,
             'php_unit_strict' => false,
             'phpdoc_align' => true,
             'phpdoc_annotation_without_dot' => false,

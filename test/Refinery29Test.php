@@ -202,7 +202,7 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
             'ordered_imports' => true,
             'php_unit_construct' => false, // risky
             'php_unit_dedicate_assert' => false, // risky
-            'php_unit_fqcn_annotation' => false, // have not decided to use this one (yet)
+            'php_unit_fqcn_annotation' => true,
             'php_unit_strict' => false, // risky
             'phpdoc_align' => true,
             'phpdoc_annotation_without_dot' => false, // have not decided to use this one (yet)
