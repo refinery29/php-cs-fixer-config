@@ -194,7 +194,7 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
             'no_useless_return' => true,
             'no_whitespace_before_comma_in_array' => true,
             'no_whitespace_in_blank_line' => true,
-            'normalize_index_brace' => false, // have not decided to use this one (yet)
+            'normalize_index_brace' => true,
             'not_operator_with_space' => false, // have decided not to use it
             'not_operator_with_successor_space' => false, // have decided not to use it
             'object_operator_without_whitespace' => true,
