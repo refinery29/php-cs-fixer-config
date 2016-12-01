@@ -4,21 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "acde3e411be198b65646b3e6e145cc66",
-    "content-hash": "7e81c33a0acf5cab950dc8cf0bada07e",
+    "hash": "eaf72e0777aabba2770d8b7310a83f42",
+    "content-hash": "77831997d2c8c965ba2b67ff1135d6b2",
     "packages": [
         {
             "name": "friendsofphp/php-cs-fixer",
-            "version": "v2.0.0-RC",
+            "version": "v2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfPHP/PHP-CS-Fixer.git",
-                "reference": "f88ef17f44fa442e1dd98deb7da0d943be9c8fa8"
+                "reference": "f3baf72eb2f58bf275b372540f5b47d25aed910f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfPHP/PHP-CS-Fixer/zipball/f88ef17f44fa442e1dd98deb7da0d943be9c8fa8",
-                "reference": "f88ef17f44fa442e1dd98deb7da0d943be9c8fa8",
+                "url": "https://api.github.com/repos/FriendsOfPHP/PHP-CS-Fixer/zipball/f3baf72eb2f58bf275b372540f5b47d25aed910f",
+                "reference": "f3baf72eb2f58bf275b372540f5b47d25aed910f",
                 "shasum": ""
             },
             "require": {
@@ -37,6 +37,7 @@
                 "hhvm": "<3.9"
             },
             "require-dev": {
+                "gecko-packages/gecko-php-unit": "^2.0",
                 "phpunit/phpunit": "^4.5|^5",
                 "satooshi/php-coveralls": "^1.0"
             },
@@ -69,7 +70,45 @@
                 }
             ],
             "description": "A tool to automatically fix PHP code style",
-            "time": "2016-11-12 22:43:36"
+            "time": "2016-12-01 06:18:06"
+        },
+        {
+            "name": "psr/log",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/log.git",
+                "reference": "fe0936ee26643249e916849d48e3a51d5f5e278b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/fe0936ee26643249e916849d48e3a51d5f5e278b",
+                "reference": "fe0936ee26643249e916849d48e3a51d5f5e278b",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Psr\\Log\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interface for logging libraries",
+            "keywords": [
+                "log",
+                "psr",
+                "psr-3"
+            ],
+            "time": "2012-12-21 11:40:51"
         },
         {
             "name": "sebastian/diff",
@@ -125,36 +164,39 @@
         },
         {
             "name": "symfony/console",
-            "version": "v3.1.0",
+            "version": "v3.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "f62db5b8afec27073a4609b8c84b1f9936652259"
+                "reference": "09d0fd33560e3573185a2ea17614e37ba38716c5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/f62db5b8afec27073a4609b8c84b1f9936652259",
-                "reference": "f62db5b8afec27073a4609b8c84b1f9936652259",
+                "url": "https://api.github.com/repos/symfony/console/zipball/09d0fd33560e3573185a2ea17614e37ba38716c5",
+                "reference": "09d0fd33560e3573185a2ea17614e37ba38716c5",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.5.9",
+                "symfony/debug": "~2.8|~3.0",
                 "symfony/polyfill-mbstring": "~1.0"
             },
             "require-dev": {
                 "psr/log": "~1.0",
                 "symfony/event-dispatcher": "~2.8|~3.0",
+                "symfony/filesystem": "~2.8|~3.0",
                 "symfony/process": "~2.8|~3.0"
             },
             "suggest": {
                 "psr/log": "For using the console logger",
                 "symfony/event-dispatcher": "",
+                "symfony/filesystem": "",
                 "symfony/process": ""
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.1-dev"
+                    "dev-master": "3.2-dev"
                 }
             },
             "autoload": {
@@ -181,20 +223,77 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2016-05-30 06:58:39"
+            "time": "2016-11-16 22:18:16"
         },
         {
-            "name": "symfony/event-dispatcher",
-            "version": "v3.1.0",
+            "name": "symfony/debug",
+            "version": "v3.2.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/symfony/event-dispatcher.git",
-                "reference": "0343b2cedd0edb26cdc791212a8eb645c406018b"
+                "url": "https://github.com/symfony/debug.git",
+                "reference": "9f923e68d524a3095c5a2ae5fc7220c7cbc12231"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/0343b2cedd0edb26cdc791212a8eb645c406018b",
-                "reference": "0343b2cedd0edb26cdc791212a8eb645c406018b",
+                "url": "https://api.github.com/repos/symfony/debug/zipball/9f923e68d524a3095c5a2ae5fc7220c7cbc12231",
+                "reference": "9f923e68d524a3095c5a2ae5fc7220c7cbc12231",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.9",
+                "psr/log": "~1.0"
+            },
+            "conflict": {
+                "symfony/http-kernel": ">=2.3,<2.3.24|~2.4.0|>=2.5,<2.5.9|>=2.6,<2.6.2"
+            },
+            "require-dev": {
+                "symfony/class-loader": "~2.8|~3.0",
+                "symfony/http-kernel": "~2.8|~3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.2-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Debug\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Debug Component",
+            "homepage": "https://symfony.com",
+            "time": "2016-11-16 22:18:16"
+        },
+        {
+            "name": "symfony/event-dispatcher",
+            "version": "v3.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/event-dispatcher.git",
+                "reference": "e8f47a327c2f0fd5aa04fa60af2b693006ed7283"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/e8f47a327c2f0fd5aa04fa60af2b693006ed7283",
+                "reference": "e8f47a327c2f0fd5aa04fa60af2b693006ed7283",
                 "shasum": ""
             },
             "require": {
@@ -214,7 +313,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.1-dev"
+                    "dev-master": "3.2-dev"
                 }
             },
             "autoload": {
@@ -241,20 +340,20 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "https://symfony.com",
-            "time": "2016-04-12 18:27:47"
+            "time": "2016-10-13 06:29:04"
         },
         {
             "name": "symfony/filesystem",
-            "version": "v3.1.0",
+            "version": "v3.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/filesystem.git",
-                "reference": "5751e80d6f94b7c018f338a4a7be0b700d6f3058"
+                "reference": "8d4cf7561a5b17e5eb7a02b80d0b8f014a3796d4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/filesystem/zipball/5751e80d6f94b7c018f338a4a7be0b700d6f3058",
-                "reference": "5751e80d6f94b7c018f338a4a7be0b700d6f3058",
+                "url": "https://api.github.com/repos/symfony/filesystem/zipball/8d4cf7561a5b17e5eb7a02b80d0b8f014a3796d4",
+                "reference": "8d4cf7561a5b17e5eb7a02b80d0b8f014a3796d4",
                 "shasum": ""
             },
             "require": {
@@ -263,7 +362,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.1-dev"
+                    "dev-master": "3.2-dev"
                 }
             },
             "autoload": {
@@ -290,20 +389,20 @@
             ],
             "description": "Symfony Filesystem Component",
             "homepage": "https://symfony.com",
-            "time": "2016-04-12 18:27:47"
+            "time": "2016-11-24 00:46:43"
         },
         {
             "name": "symfony/finder",
-            "version": "v3.0.6",
+            "version": "v3.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
-                "reference": "c54e407b35bc098916704e9fd090da21da4c4f52"
+                "reference": "4263e35a1e342a0f195c9349c0dee38148f8a14f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/finder/zipball/c54e407b35bc098916704e9fd090da21da4c4f52",
-                "reference": "c54e407b35bc098916704e9fd090da21da4c4f52",
+                "url": "https://api.github.com/repos/symfony/finder/zipball/4263e35a1e342a0f195c9349c0dee38148f8a14f",
+                "reference": "4263e35a1e342a0f195c9349c0dee38148f8a14f",
                 "shasum": ""
             },
             "require": {
@@ -312,7 +411,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.0-dev"
+                    "dev-master": "3.2-dev"
                 }
             },
             "autoload": {
@@ -339,20 +438,20 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "https://symfony.com",
-            "time": "2016-03-10 11:13:05"
+            "time": "2016-11-03 08:11:03"
         },
         {
             "name": "symfony/polyfill-mbstring",
-            "version": "v1.2.0",
+            "version": "v1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-mbstring.git",
-                "reference": "dff51f72b0706335131b00a7f49606168c582594"
+                "reference": "e79d363049d1c2128f133a2667e4f4190904f7f4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/dff51f72b0706335131b00a7f49606168c582594",
-                "reference": "dff51f72b0706335131b00a7f49606168c582594",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/e79d363049d1c2128f133a2667e4f4190904f7f4",
+                "reference": "e79d363049d1c2128f133a2667e4f4190904f7f4",
                 "shasum": ""
             },
             "require": {
@@ -364,7 +463,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.2-dev"
+                    "dev-master": "1.3-dev"
                 }
             },
             "autoload": {
@@ -398,20 +497,20 @@
                 "portable",
                 "shim"
             ],
-            "time": "2016-05-18 14:26:46"
+            "time": "2016-11-14 01:06:16"
         },
         {
             "name": "symfony/polyfill-php54",
-            "version": "v1.2.0",
+            "version": "v1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php54.git",
-                "reference": "34d761992f6f2cc6092cc0e5e93f38b53ba5e4f1"
+                "reference": "90e085822963fdcc9d1c5b73deb3d2e5783b16a0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-php54/zipball/34d761992f6f2cc6092cc0e5e93f38b53ba5e4f1",
-                "reference": "34d761992f6f2cc6092cc0e5e93f38b53ba5e4f1",
+                "url": "https://api.github.com/repos/symfony/polyfill-php54/zipball/90e085822963fdcc9d1c5b73deb3d2e5783b16a0",
+                "reference": "90e085822963fdcc9d1c5b73deb3d2e5783b16a0",
                 "shasum": ""
             },
             "require": {
@@ -420,7 +519,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.2-dev"
+                    "dev-master": "1.3-dev"
                 }
             },
             "autoload": {
@@ -456,20 +555,20 @@
                 "portable",
                 "shim"
             ],
-            "time": "2016-05-18 14:26:46"
+            "time": "2016-11-14 01:06:16"
         },
         {
             "name": "symfony/process",
-            "version": "v3.0.6",
+            "version": "v3.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
-                "reference": "53f9407c0bb1c5a79127db8f7bfe12f0f6f3dcdb"
+                "reference": "02ea84847aad71be7e32056408bb19f3a616cdd3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/process/zipball/53f9407c0bb1c5a79127db8f7bfe12f0f6f3dcdb",
-                "reference": "53f9407c0bb1c5a79127db8f7bfe12f0f6f3dcdb",
+                "url": "https://api.github.com/repos/symfony/process/zipball/02ea84847aad71be7e32056408bb19f3a616cdd3",
+                "reference": "02ea84847aad71be7e32056408bb19f3a616cdd3",
                 "shasum": ""
             },
             "require": {
@@ -478,7 +577,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.0-dev"
+                    "dev-master": "3.2-dev"
                 }
             },
             "autoload": {
@@ -505,20 +604,20 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "https://symfony.com",
-            "time": "2016-04-14 15:30:28"
+            "time": "2016-11-24 10:40:28"
         },
         {
             "name": "symfony/stopwatch",
-            "version": "v3.1.0",
+            "version": "v3.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/stopwatch.git",
-                "reference": "4670f122fa32a4900003a6802f6b8575f3f0b17e"
+                "reference": "5b139e1c4290e6c7640ba80d9c9b5e49ef22b841"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/stopwatch/zipball/4670f122fa32a4900003a6802f6b8575f3f0b17e",
-                "reference": "4670f122fa32a4900003a6802f6b8575f3f0b17e",
+                "url": "https://api.github.com/repos/symfony/stopwatch/zipball/5b139e1c4290e6c7640ba80d9c9b5e49ef22b841",
+                "reference": "5b139e1c4290e6c7640ba80d9c9b5e49ef22b841",
                 "shasum": ""
             },
             "require": {
@@ -527,7 +626,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.1-dev"
+                    "dev-master": "3.2-dev"
                 }
             },
             "autoload": {
@@ -554,7 +653,7 @@
             ],
             "description": "Symfony Stopwatch Component",
             "homepage": "https://symfony.com",
-            "time": "2016-03-04 07:56:56"
+            "time": "2016-06-29 05:43:10"
         }
     ],
     "packages-dev": [
@@ -1343,44 +1442,6 @@
             "time": "2015-10-02 06:51:40"
         },
         {
-            "name": "psr/log",
-            "version": "1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/php-fig/log.git",
-                "reference": "fe0936ee26643249e916849d48e3a51d5f5e278b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/log/zipball/fe0936ee26643249e916849d48e3a51d5f5e278b",
-                "reference": "fe0936ee26643249e916849d48e3a51d5f5e278b",
-                "shasum": ""
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Psr\\Log\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "PHP-FIG",
-                    "homepage": "http://www.php-fig.org/"
-                }
-            ],
-            "description": "Common interface for logging libraries",
-            "keywords": [
-                "log",
-                "psr",
-                "psr-3"
-            ],
-            "time": "2012-12-21 11:40:51"
-        },
-        {
             "name": "satooshi/php-coveralls",
             "version": "v1.0.1",
             "source": {
@@ -1913,9 +1974,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "friendsofphp/php-cs-fixer": 5
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
