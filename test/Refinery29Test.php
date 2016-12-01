@@ -146,8 +146,9 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
             'cast_spaces' => true,
             'class_keyword_remove' => false,
             'combine_consecutive_unsets' => true,
-            'concat_with_spaces' => true,
-            'concat_without_spaces' => false, // conflicts with concat_with_spaces (which is enabled)
+            'concat_space' => [
+                'spacing' => 'one',
+            ],
             'declare_equal_normalize' => false,
             'declare_strict_types' => false,  // have not decided to use this one (yet)
             'dir_constant' => false, // risky
@@ -178,6 +179,7 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
             'no_extra_consecutive_blank_lines' => true,
             'no_leading_import_slash' => true,
             'no_leading_namespace_whitespace' => true,
+            'no_mixed_echo_print' => false, // have decided not to use it
             'no_multiline_whitespace_around_double_arrow' => true,
             'no_multiline_whitespace_before_semicolons' => true,
             'no_php4_constructor' => false, // risky
@@ -205,6 +207,7 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
             'php_unit_fqcn_annotation' => true,
             'php_unit_strict' => false, // risky
             'phpdoc_align' => true,
+            'phpdoc_add_missing_param_annotation' => false, // have not decided to use this one (yet)
             'phpdoc_annotation_without_dot' => false, // have not decided to use this one (yet)
             'phpdoc_indent' => true,
             'phpdoc_inline_tag' => true,
@@ -219,9 +222,10 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
             'phpdoc_summary' => true,
             'phpdoc_to_comment' => true,
             'phpdoc_trim' => true,
-            'phpdoc_type_to_var' => true,
+            'phpdoc_no_alias_tag' => [
+                'type' => 'var',
+            ],
             'phpdoc_types' => true,
-            'phpdoc_var_to_type' => false, // conflicts with phpdoc_type_to_var (which is enabled)
             'phpdoc_var_without_name' => true,
             'pow_to_exponentiation' => false, // have not decided to use this one (yet)
             'pre_increment' => true,
