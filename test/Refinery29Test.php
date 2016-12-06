@@ -10,6 +10,7 @@
 namespace Refinery29\CS\Config\Test;
 
 use PhpCsFixer\ConfigInterface;
+use PhpCsFixer\Fixer\FixerInterface;
 use PhpCsFixer\FixerFactory;
 use PhpCsFixer\RuleSet;
 use Refinery29\CS\Config\Refinery29;
@@ -86,10 +87,37 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
         }
     }
 
-    public function testHasRulesForBuiltInFixers()
+    /**
+     * @dataProvider providerBuiltInRules
+     *
+     * @param string $rule
+     */
+    public function testBuiltInRuleIsConfigured($rule)
     {
         $config = new Refinery29();
 
+        /**
+         * RuleSet::create() removes disabled fixers, to let's just enable them to make sure they not removed.
+         *
+         * @see https://github.com/FriendsOfPHP/PHP-CS-Fixer/pull/2361
+         */
+        $rules = array_map(function () {
+            return true;
+        }, $config->getRules());
+
+        /**
+         * RuleSet::create() resolves sets such as @PSR1 or @PSR2, let's use it to resolve these for us.
+         */
+        $ruleSet = RuleSet::create($rules);
+
+        $this->assertArrayHasKey($rule, $ruleSet->getRules(), sprintf(
+            'Failed to assert that a configuration for the built-in fixer with the rule name "%s" is provided.',
+            $rule
+        ));
+    }
+
+    public function providerBuiltInRules()
+    {
         $fixerFactory = FixerFactory::create();
         $fixerFactory->registerBuiltInFixers();
 
@@ -100,51 +128,14 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
 
         $reflection->setAccessible(true);
 
+        /* @var FixerInterface[] $builtInFixers */
         $builtInFixers = $reflection->getValue($fixerFactory);
 
-        try {
-            $fixerFactory->useRuleSet(RuleSet::create($config->getRules()));
-        } catch (\UnexpectedValueException $exception) {
-            $this->fail($exception->getMessage());
-
-            return;
+        foreach ($builtInFixers as $rule => $fixer) {
+            yield [
+                $rule,
+            ];
         }
-
-        $configuredFixers = $reflection->getValue($fixerFactory);
-
-        /*
-         * Before comparing if we have rules for all built-in fixers, remove the rules for built-in fixers which we have
-         * explicitly disabled, as RuleSet::resolveSet() will filter out disabled rules.
-         *
-         * @see RuleSet::create()
-         * @see RuleSet::resolveSet()
-         */
-        foreach ($config->getRules() as $rule => $ruleConfiguration) {
-            if ($ruleConfiguration === false) {
-                unset($builtInFixers[$rule]);
-            }
-        }
-
-        $builtInRules = $this->removeValues($builtInFixers);
-        $configuredRules = $this->removeValues($configuredFixers);
-
-        ksort($builtInRules);
-        ksort($configuredRules);
-
-        $this->assertEquals($builtInRules, $configuredRules);
-    }
-
-    /**
-     * @param array $data
-     *
-     * @return array
-     */
-    private function removeValues(array $data)
-    {
-        return array_combine(
-            array_keys($data),
-            array_fill(0, count($data), true)
-        );
     }
 
     public function testDoesNotHaveHeaderCommentFixerByDefault()
