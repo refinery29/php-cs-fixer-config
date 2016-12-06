@@ -39,6 +39,53 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
         $this->assertEquals($this->getRules(), $config->getRules());
     }
 
+    /**
+     * @dataProvider providerConfiguredRules
+     *
+     * @param string $rule
+     */
+    public function testConfiguredRuleIsBuiltIn($rule)
+    {
+        /**
+         * RuleSet::create() removes disabled fixers, to let's just enable them to make sure they are validated.
+         *
+         * @see https://github.com/FriendsOfPHP/PHP-CS-Fixer/pull/2361
+         */
+        $ruleSet = RuleSet::create([
+            $rule => true,
+        ]);
+
+        $fixerFactory = FixerFactory::create();
+        $fixerFactory->registerBuiltInFixers();
+
+        try {
+            $fixerFactory->useRuleSet($ruleSet);
+        } catch (\UnexpectedValueException $exception) {
+            $this->fail(sprintf(
+                'Failed to assert that a built-in fixer with the rule name "%s" exists.',
+                $rule
+            ));
+
+            return;
+        }
+
+        $this->assertInstanceOf(FixerFactory::class, $fixerFactory);
+    }
+
+    /**
+     * @return \Generator
+     */
+    public function providerConfiguredRules()
+    {
+        $config = new Refinery29();
+
+        foreach ($config->getRules() as $rule => $configuration) {
+            yield [
+                $rule,
+            ];
+        }
+    }
+
     public function testHasRulesForBuiltInFixers()
     {
         $config = new Refinery29();
