@@ -206,12 +206,15 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
             'php_unit_dedicate_assert' => false, // risky
             'php_unit_fqcn_annotation' => true,
             'php_unit_strict' => false, // risky
-            'phpdoc_align' => true,
             'phpdoc_add_missing_param_annotation' => false, // have not decided to use this one (yet)
+            'phpdoc_align' => true,
             'phpdoc_annotation_without_dot' => false, // have not decided to use this one (yet)
             'phpdoc_indent' => true,
             'phpdoc_inline_tag' => true,
             'phpdoc_no_access' => true,
+            'phpdoc_no_alias_tag' => [
+                'type' => 'var',
+            ],
             'phpdoc_no_empty_return' => true,
             'phpdoc_no_package' => true,
             'phpdoc_order' => true,
@@ -222,9 +225,6 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
             'phpdoc_summary' => true,
             'phpdoc_to_comment' => true,
             'phpdoc_trim' => true,
-            'phpdoc_no_alias_tag' => [
-                'type' => 'var',
-            ],
             'phpdoc_types' => true,
             'phpdoc_var_without_name' => true,
             'pow_to_exponentiation' => false, // have not decided to use this one (yet)

@@ -112,6 +112,9 @@ class Refinery29 extends Config
             'phpdoc_indent' => true,
             'phpdoc_inline_tag' => true,
             'phpdoc_no_access' => true,
+            'phpdoc_no_alias_tag' => [
+                'type' => 'var',
+            ],
             'phpdoc_no_empty_return' => true,
             'phpdoc_no_package' => true,
             'phpdoc_order' => true,
@@ -122,9 +125,6 @@ class Refinery29 extends Config
             'phpdoc_summary' => true,
             'phpdoc_to_comment' => true,
             'phpdoc_trim' => true,
-            'phpdoc_no_alias_tag' => [
-                'type' => 'var',
-            ],
             'phpdoc_types' => true,
             'phpdoc_var_without_name' => true,
             'pow_to_exponentiation' => false,
