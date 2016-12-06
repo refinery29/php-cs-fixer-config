@@ -199,17 +199,14 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
             'declare_equal_normalize' => false,
             'declare_strict_types' => false,  // have not decided to use this one (yet)
             'dir_constant' => false, // risky
-            'echo_to_print' => false, // have not decided to use this one (yet)
             'ereg_to_preg' => false, // risky
             'function_typehint_space' => true,
             'general_phpdoc_annotation_remove' => false, // have not decided to use this one (yet)
-            'general_phpdoc_annotation_rename' => false, // have not decided to use this one (yet)
             'hash_to_slash_comment' => true,
             'header_comment' => false, // not enabled by default
             'heredoc_to_nowdoc' => false, // have not decided to use this one (yet)
             'include' => true,
             'linebreak_after_opening_tag' => true,
-            'long_array_syntax' => false, // conflicts with short_array_syntax (which is enabled)
             'lowercase_cast' => true,
             'mb_str_functions' => false, // have not decided to use this one (yet)
             'method_separation' => true,
@@ -265,7 +262,6 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
             'phpdoc_no_empty_return' => true,
             'phpdoc_no_package' => true,
             'phpdoc_order' => true,
-            'phpdoc_property' => false, // have not decided to use this one (yet)
             'phpdoc_scalar' => true,
             'phpdoc_separation' => true,
             'phpdoc_single_line_var_spacing' => true,
@@ -276,7 +272,6 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
             'phpdoc_var_without_name' => true,
             'pow_to_exponentiation' => false, // have not decided to use this one (yet)
             'pre_increment' => true,
-            'print_to_echo' => false, // have not decided to use this one (yet)
             'protected_to_private' => false, // have not decided to use this one (yet)
             'psr0' => false, // using PSR-4
             'psr4' => false, // have not decided to use this one (yet)
