@@ -10,7 +10,6 @@
 namespace Refinery29\CS\Config\Test;
 
 use PhpCsFixer\ConfigInterface;
-use PhpCsFixer\Fixer\FixerInterface;
 use PhpCsFixer\FixerFactory;
 use PhpCsFixer\RuleSet;
 use Refinery29\CS\Config\Refinery29;
@@ -40,59 +39,50 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
         $this->assertEquals($this->getRules(), $config->getRules());
     }
 
-    /**
-     * @dataProvider providerConfiguredRules
-     *
-     * @param string $rule
-     */
-    public function testConfiguredRuleIsBuiltIn($rule)
+    public function testAllConfiguredRulesAreBuiltIn()
     {
-        /**
-         * RuleSet::create() removes disabled fixers, to let's just enable them to make sure they are validated.
-         *
-         * @see https://github.com/FriendsOfPHP/PHP-CS-Fixer/pull/2361
-         */
-        $ruleSet = RuleSet::create([
-            $rule => true,
-        ]);
+        $fixersNotBuiltIn = array_diff(
+            $this->configuredFixers(),
+            $this->builtInFixers()
+        );
 
+        $this->assertEmpty($fixersNotBuiltIn, sprintf(
+            'Failed to assert that fixers for the rules "%s" are built in',
+            implode('", "', $fixersNotBuiltIn)
+        ));
+    }
+
+    public function testAllBuiltInRulesAreConfigured()
+    {
+        $fixersWithoutConfiguration = array_diff(
+            $this->builtInFixers(),
+            $this->configuredFixers()
+        );
+
+        $this->assertEmpty($fixersWithoutConfiguration, sprintf(
+            'Failed to assert that built-in fixers for the rules "%s" are configured',
+            implode('", "', $fixersWithoutConfiguration)
+        ));
+    }
+
+    /**
+     * @return string[]
+     */
+    private function builtInFixers()
+    {
         $fixerFactory = FixerFactory::create();
         $fixerFactory->registerBuiltInFixers();
 
-        try {
-            $fixerFactory->useRuleSet($ruleSet);
-        } catch (\UnexpectedValueException $exception) {
-            $this->fail(sprintf(
-                'Failed to assert that a built-in fixer with the rule name "%s" exists.',
-                $rule
-            ));
+        $reflection = new \ReflectionProperty(FixerFactory::class, 'fixersByName');
+        $reflection->setAccessible(true);
 
-            return;
-        }
-
-        $this->assertInstanceOf(FixerFactory::class, $fixerFactory);
+        return array_keys($reflection->getValue($fixerFactory));
     }
 
     /**
-     * @return \Generator
+     * @return string[]
      */
-    public function providerConfiguredRules()
-    {
-        $config = new Refinery29();
-
-        foreach ($config->getRules() as $rule => $configuration) {
-            yield [
-                $rule,
-            ];
-        }
-    }
-
-    /**
-     * @dataProvider providerBuiltInRules
-     *
-     * @param string $rule
-     */
-    public function testBuiltInRuleIsConfigured($rule)
+    private function configuredFixers()
     {
         $config = new Refinery29();
 
@@ -105,37 +95,7 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
             return true;
         }, $config->getRules());
 
-        /**
-         * RuleSet::create() resolves sets such as @PSR1 or @PSR2, let's use it to resolve these for us.
-         */
-        $ruleSet = RuleSet::create($rules);
-
-        $this->assertArrayHasKey($rule, $ruleSet->getRules(), sprintf(
-            'Failed to assert that a configuration for the built-in fixer with the rule name "%s" is provided.',
-            $rule
-        ));
-    }
-
-    public function providerBuiltInRules()
-    {
-        $fixerFactory = FixerFactory::create();
-        $fixerFactory->registerBuiltInFixers();
-
-        $reflection = new \ReflectionProperty(
-            FixerFactory::class,
-            'fixersByName'
-        );
-
-        $reflection->setAccessible(true);
-
-        /* @var FixerInterface[] $builtInFixers */
-        $builtInFixers = $reflection->getValue($fixerFactory);
-
-        foreach ($builtInFixers as $rule => $fixer) {
-            yield [
-                $rule,
-            ];
-        }
+        return array_keys(RuleSet::create($rules)->getRules());
     }
 
     public function testDoesNotHaveHeaderCommentFixerByDefault()
