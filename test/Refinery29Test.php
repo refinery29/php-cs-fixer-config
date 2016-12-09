@@ -203,7 +203,9 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
             'php_unit_dedicate_assert' => false, // risky
             'php_unit_fqcn_annotation' => true,
             'php_unit_strict' => false, // risky
-            'phpdoc_add_missing_param_annotation' => false, // have not decided to use this one (yet)
+            'phpdoc_add_missing_param_annotation' => [
+                'only_untyped' => false,
+            ],
             'phpdoc_align' => true,
             'phpdoc_annotation_without_dot' => false, // have not decided to use this one (yet)
             'phpdoc_indent' => true,
