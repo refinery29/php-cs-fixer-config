@@ -148,7 +148,7 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
                 'spacing' => 'one',
             ],
             'declare_equal_normalize' => false,
-            'declare_strict_types' => false,  // have not decided to use this one (yet)
+            'declare_strict_types' => true,
             'dir_constant' => false, // risky
             'ereg_to_preg' => false, // risky
             'function_typehint_space' => true,
