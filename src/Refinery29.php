@@ -105,7 +105,9 @@ class Refinery29 extends Config
             'php_unit_dedicate_assert' => false,
             'php_unit_fqcn_annotation' => true,
             'php_unit_strict' => false,
-            'phpdoc_add_missing_param_annotation' => false,
+            'phpdoc_add_missing_param_annotation' => [
+                'only_untyped' => false,
+            ],
             'phpdoc_align' => true,
             'phpdoc_annotation_without_dot' => false,
             'phpdoc_indent' => true,
