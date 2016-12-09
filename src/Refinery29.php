@@ -49,7 +49,7 @@ class Refinery29 extends Config
             'concat_space' => [
                 'spacing' => 'one',
             ],
-            'declare_equal_normalize' => false,
+            'declare_equal_normalize' => true,
             'declare_strict_types' => true,
             'dir_constant' => false,
             'ereg_to_preg' => false,
