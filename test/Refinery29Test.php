@@ -174,7 +174,9 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
             'no_extra_consecutive_blank_lines' => true,
             'no_leading_import_slash' => true,
             'no_leading_namespace_whitespace' => true,
-            'no_mixed_echo_print' => false, // have decided not to use it
+            'no_mixed_echo_print' => [
+                'use' => 'echo',
+            ],
             'no_multiline_whitespace_around_double_arrow' => true,
             'no_multiline_whitespace_before_semicolons' => true,
             'no_php4_constructor' => false, // risky
