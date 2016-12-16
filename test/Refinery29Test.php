@@ -238,7 +238,7 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
             'phpdoc_var_without_name' => true,
             'pow_to_exponentiation' => false, // have not decided to use this one (yet)
             'pre_increment' => true,
-            'protected_to_private' => false, // have not decided to use this one (yet)
+            'protected_to_private' => true,
             'psr0' => false, // using PSR-4
             'psr4' => false, // have not decided to use this one (yet)
             'random_api_migration' => false, // risky

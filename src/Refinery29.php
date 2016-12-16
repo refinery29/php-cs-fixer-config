@@ -140,7 +140,7 @@ class Refinery29 extends Config
             'phpdoc_var_without_name' => true,
             'pow_to_exponentiation' => false,
             'pre_increment' => true,
-            'protected_to_private' => false,
+            'protected_to_private' => true,
             'psr0' => false,
             'psr4' => false,
             'random_api_migration' => false,
