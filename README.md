@@ -4,7 +4,7 @@
 [![Code Climate](https://codeclimate.com/github/refinery29/php-cs-fixer-config/badges/gpa.svg)](https://codeclimate.com/github/refinery29/php-cs-fixer-config)
 [![Test Coverage](https://codeclimate.com/github/refinery29/php-cs-fixer-config/badges/coverage.svg)](https://codeclimate.com/github/refinery29/php-cs-fixer-config/coverage)
 
-This repository provides a configuration for [`friendsofphp/php-cs-fixer`](http://github.com/FriendsOfPHP/PHP-CS-Fixer), which 
+This repository provides a configuration for [`friendsofphp/php-cs-fixer`](http://github.com/FriendsOfPHP/PHP-CS-Fixer), which
 we use to verify and enforce a single coding standard for PHP code within Refinery29.
 
 ## Installation
@@ -14,7 +14,7 @@ Run
 ```
 $ composer require --dev refinery29/php-cs-fixer-config
 ```
-  
+
 ## Usage
 
 ### Configuration
@@ -82,7 +82,7 @@ matrix:
       env: WITH_CS=true
     - php: 5.6
       env: WITH_COVERAGE=true
-      
+
 script:
   - if [[ "$WITH_CS" == "true" ]]; then vendor/bin/php-cs-fixer fix --config=.php_cs --verbose --diff --dry-run; fi
 ```
@@ -97,7 +97,7 @@ composer:
 	composer install
 
 cs: composer
-	vendor/bin/php-cs-fixer fix --config-file=.php_cs --verbose --diff
+	vendor/bin/php-cs-fixer fix --config=.php_cs --verbose --diff
 ```
 
 ## Fixing issues
@@ -142,7 +142,7 @@ fi
 
 if $HAS_PHP_CS_FIXER; then
     git status --porcelain | grep -e '^[AM]\(.*\).php$' | cut -c 3- | while read line; do
-        ${PHP_CS_FIXER} fix --config-file=.php_cs --verbose ${line};
+        ${PHP_CS_FIXER} fix --config=.php_cs --verbose ${line};
         git add "$line";
     done
 else
