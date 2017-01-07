@@ -10,6 +10,7 @@
 namespace Refinery29\CS\Config\Test;
 
 use PhpCsFixer\ConfigInterface;
+use PhpCsFixer\Fixer\FixerInterface;
 use PhpCsFixer\FixerFactory;
 use PhpCsFixer\RuleSet;
 use Refinery29\CS\Config\Refinery29;
@@ -73,10 +74,9 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
         $fixerFactory = FixerFactory::create();
         $fixerFactory->registerBuiltInFixers();
 
-        $reflection = new \ReflectionProperty(FixerFactory::class, 'fixersByName');
-        $reflection->setAccessible(true);
-
-        return \array_keys($reflection->getValue($fixerFactory));
+        return \array_map(function (FixerInterface $fixer) {
+            return $fixer->getName();
+        }, $fixerFactory->getFixers());
     }
 
     /**
