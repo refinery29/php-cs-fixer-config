@@ -41,27 +41,27 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
 
     public function testAllConfiguredRulesAreBuiltIn()
     {
-        $fixersNotBuiltIn = array_diff(
+        $fixersNotBuiltIn = \array_diff(
             $this->configuredFixers(),
             $this->builtInFixers()
         );
 
-        $this->assertEmpty($fixersNotBuiltIn, sprintf(
+        $this->assertEmpty($fixersNotBuiltIn, \sprintf(
             'Failed to assert that fixers for the rules "%s" are built in',
-            implode('", "', $fixersNotBuiltIn)
+            \implode('", "', $fixersNotBuiltIn)
         ));
     }
 
     public function testAllBuiltInRulesAreConfigured()
     {
-        $fixersWithoutConfiguration = array_diff(
+        $fixersWithoutConfiguration = \array_diff(
             $this->builtInFixers(),
             $this->configuredFixers()
         );
 
-        $this->assertEmpty($fixersWithoutConfiguration, sprintf(
+        $this->assertEmpty($fixersWithoutConfiguration, \sprintf(
             'Failed to assert that built-in fixers for the rules "%s" are configured',
-            implode('", "', $fixersWithoutConfiguration)
+            \implode('", "', $fixersWithoutConfiguration)
         ));
     }
 
@@ -76,7 +76,7 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
         $reflection = new \ReflectionProperty(FixerFactory::class, 'fixersByName');
         $reflection->setAccessible(true);
 
-        return array_keys($reflection->getValue($fixerFactory));
+        return \array_keys($reflection->getValue($fixerFactory));
     }
 
     /**
@@ -91,11 +91,11 @@ class Refinery29Test extends \PHPUnit_Framework_TestCase
          *
          * @see https://github.com/FriendsOfPHP/PHP-CS-Fixer/pull/2361
          */
-        $rules = array_map(function () {
+        $rules = \array_map(function () {
             return true;
         }, $config->getRules());
 
-        return array_keys(RuleSet::create($rules)->getRules());
+        return \array_keys(RuleSet::create($rules)->getRules());
     }
 
     public function testDoesNotHaveHeaderCommentFixerByDefault()
