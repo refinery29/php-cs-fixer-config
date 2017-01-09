@@ -15,7 +15,7 @@ use PhpCsFixer\FixerFactory;
 use PhpCsFixer\RuleSet;
 use Refinery29\CS\Config\Refinery29;
 
-class Refinery29Test extends \PHPUnit_Framework_TestCase
+final class Refinery29Test extends \PHPUnit_Framework_TestCase
 {
     public function testImplementsInterface()
     {
