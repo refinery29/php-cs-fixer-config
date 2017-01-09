@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "003d2b0f5429d6f5f05a473027987b25",
+    "content-hash": "ef4da385aa2151c39c7ea8bc6de577bf",
     "packages": [
         {
             "name": "friendsofphp/php-cs-fixer",
@@ -1673,26 +1673,27 @@
         },
         {
             "name": "refinery29/test-util",
-            "version": "0.9.10",
+            "version": "0.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/refinery29/test-util.git",
-                "reference": "b775ead7e6ae449bc43dc663f5e1b85103098a79"
+                "reference": "f7603cb194de90ac77d299bef25158285e845205"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/refinery29/test-util/zipball/b775ead7e6ae449bc43dc663f5e1b85103098a79",
-                "reference": "b775ead7e6ae449bc43dc663f5e1b85103098a79",
+                "url": "https://api.github.com/repos/refinery29/test-util/zipball/f7603cb194de90ac77d299bef25158285e845205",
+                "reference": "f7603cb194de90ac77d299bef25158285e845205",
                 "shasum": ""
             },
             "require": {
-                "fzaninotto/faker": "^1.6.0",
-                "php": "^5.6 || ^7.0"
+                "fzaninotto/faker": "^1.5.1",
+                "php": "^5.6 || ^7.0",
+                "phpunit/phpunit": "^5.2.0",
+                "zendframework/zend-file": "^2.3.4"
             },
             "require-dev": {
-                "beberlei/assert": "^2.6.5",
-                "codeclimate/php-test-reporter": "0.3.2",
-                "phpunit/phpunit": "^5.6.1",
+                "beberlei/assert": "^2.7.1",
+                "codeclimate/php-test-reporter": "0.4.0",
                 "refinery29/php-cs-fixer-config": "0.6.7"
             },
             "type": "library",
@@ -1725,7 +1726,7 @@
                 "test",
                 "util"
             ],
-            "time": "2017-01-06T16:55:42+00:00"
+            "time": "2017-01-09T11:22:22+00:00"
         },
         {
             "name": "satooshi/php-coveralls",
@@ -2406,6 +2407,107 @@
                 "validate"
             ],
             "time": "2016-11-23T20:04:58+00:00"
+        },
+        {
+            "name": "zendframework/zend-file",
+            "version": "2.7.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zendframework/zend-file.git",
+                "reference": "8936999f244011525671db8d6e35a2f2232d5060"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zendframework/zend-file/zipball/8936999f244011525671db8d6e35a2f2232d5060",
+                "reference": "8936999f244011525671db8d6e35a2f2232d5060",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.5 || ^7.0",
+                "zendframework/zend-stdlib": "^2.7 || ^3.0"
+            },
+            "require-dev": {
+                "fabpot/php-cs-fixer": "1.7.*",
+                "phpunit/phpunit": "~4.0",
+                "zendframework/zend-filter": "^2.6.1",
+                "zendframework/zend-i18n": "^2.6",
+                "zendframework/zend-progressbar": "^2.5.2",
+                "zendframework/zend-servicemanager": "^2.7.5 || ^3.0.3",
+                "zendframework/zend-session": "^2.6.2",
+                "zendframework/zend-validator": "^2.6"
+            },
+            "suggest": {
+                "zendframework/zend-filter": "Zend\\Filter component",
+                "zendframework/zend-i18n": "Zend\\I18n component",
+                "zendframework/zend-validator": "Zend\\Validator component"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.7-dev",
+                    "dev-develop": "2.8-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Zend\\File\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "homepage": "https://github.com/zendframework/zend-file",
+            "keywords": [
+                "file",
+                "zf2"
+            ],
+            "time": "2016-04-28T19:21:43+00:00"
+        },
+        {
+            "name": "zendframework/zend-stdlib",
+            "version": "3.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zendframework/zend-stdlib.git",
+                "reference": "debedcfc373a293f9250cc9aa03cf121428c8e78"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zendframework/zend-stdlib/zipball/debedcfc373a293f9250cc9aa03cf121428c8e78",
+                "reference": "debedcfc373a293f9250cc9aa03cf121428c8e78",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.6 || ^7.0"
+            },
+            "require-dev": {
+                "athletic/athletic": "~0.1",
+                "phpunit/phpunit": "~4.0",
+                "squizlabs/php_codesniffer": "^2.6.2"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.1-dev",
+                    "dev-develop": "3.2-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Zend\\Stdlib\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "homepage": "https://github.com/zendframework/zend-stdlib",
+            "keywords": [
+                "stdlib",
+                "zf2"
+            ],
+            "time": "2016-09-13T14:38:50+00:00"
         }
     ],
     "aliases": [],
