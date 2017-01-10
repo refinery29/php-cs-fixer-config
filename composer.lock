@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "ef4da385aa2151c39c7ea8bc6de577bf",
+    "content-hash": "09cb0f08b92410ec3759e620aff775d8",
     "packages": [
         {
             "name": "friendsofphp/php-cs-fixer",
@@ -1673,16 +1673,16 @@
         },
         {
             "name": "refinery29/test-util",
-            "version": "0.10.0",
+            "version": "0.10.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/refinery29/test-util.git",
-                "reference": "f7603cb194de90ac77d299bef25158285e845205"
+                "reference": "fb2551d6b9eadf7e64f2066ae063fa663a96dd80"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/refinery29/test-util/zipball/f7603cb194de90ac77d299bef25158285e845205",
-                "reference": "f7603cb194de90ac77d299bef25158285e845205",
+                "url": "https://api.github.com/repos/refinery29/test-util/zipball/fb2551d6b9eadf7e64f2066ae063fa663a96dd80",
+                "reference": "fb2551d6b9eadf7e64f2066ae063fa663a96dd80",
                 "shasum": ""
             },
             "require": {
@@ -1714,10 +1714,6 @@
                 {
                     "name": "R29 Product & Engineering",
                     "email": "p.e@refinery29.com"
-                },
-                {
-                    "name": "Graham Daniels",
-                    "email": "graham.daniels@refinery29.com"
                 }
             ],
             "description": "Provides a test helper, generic data providers, and assertions.",
@@ -1726,7 +1722,7 @@
                 "test",
                 "util"
             ],
-            "time": "2017-01-09T11:22:22+00:00"
+            "time": "2017-01-10T07:45:18+00:00"
         },
         {
             "name": "satooshi/php-coveralls",
