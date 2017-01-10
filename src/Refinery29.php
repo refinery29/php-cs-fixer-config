@@ -13,7 +13,7 @@ namespace Refinery29\CS\Config;
 
 use PhpCsFixer\Config;
 
-class Refinery29 extends Config
+final class Refinery29 extends Config
 {
     /**
      * @var string
