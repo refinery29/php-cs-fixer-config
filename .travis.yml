@@ -10,9 +10,13 @@ env:
 matrix:
   include:
     - php: 7.0
-      env: WITH_CS=true
+      env: WITH_LOWEST=true
+    - php: 7.0
+      env: WITH_HIGHEST=true
     - php: 7.1
-      env: WITH_COVERAGE=true
+      env: WITH_LOWEST=true
+    - php: 7.1
+      env: WITH_HIGHEST=true WITH_COVERAGE=true
 
 cache:
   directories:
@@ -20,20 +24,23 @@ cache:
     - $HOME/.php-cs-fixer
 
 before_install:
-  - if [[ "$WITH_COVERAGE" != "true" && "$TRAVIS_PHP_VERSION" != "hhvm" ]]; then phpenv config-rm xdebug.ini; fi
+  - source .travis/xdebug.sh
+  - xdebug-disable
   - composer validate
   - composer config github-oauth.github.com $GITHUB_TOKEN
 
 install:
-  - composer install --prefer-dist
+  - if [[ "$WITH_LOWEST" == "true" ]]; then composer update --prefer-lowest --prefer-dist; else composer install --prefer-dist; fi
 
 before_script:
   - mkdir -p "$HOME/.php-cs-fixer"
   - mkdir -p build/logs
 
 script:
-  - if [[ "$WITH_COVERAGE" == "true" ]]; then vendor/bin/phpunit --configuration=phpunit.xml --coverage-clover=build/logs/clover.xml; else vendor/bin/phpunit --configuration=phpunit.xml; fi
   - if [[ "$WITH_CS" == "true" ]]; then vendor/bin/php-cs-fixer fix --config=.php_cs --verbose --diff --dry-run; fi
+  - if [[ "$WITH_COVERAGE" == "true" ]]; then xdebug-enable; fi
+  - if [[ "$WITH_COVERAGE" == "true" ]]; then vendor/bin/phpunit --configuration=phpunit.xml --coverage-clover=build/logs/clover.xml; else vendor/bin/phpunit --configuration=phpunit.xml; fi
+  - if [[ "$WITH_COVERAGE" == "true" ]]; then xdebug-disable; fi
 
 after_success:
   - if [[ "$WITH_COVERAGE" == "true" ]]; then vendor/bin/test-reporter --coverage-report=build/logs/clover.xml; fi
