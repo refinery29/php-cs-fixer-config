@@ -162,6 +162,11 @@ final class Refinery29 extends Config
             'trailing_comma_in_multiline_array' => true,
             'trim_array_spaces' => true,
             'unary_operator_spaces' => true,
+            'visibility_required' => [
+                'const',
+                'property',
+                'method',
+            ],
             'whitespace_after_comma_in_array' => true,
         ];
 
