@@ -6,9 +6,7 @@ For details, see [`.travis.yml`](../.travis.yml).
  
 ## Tests
 
-We're using [`phpunit/phpunit`](https://github.com/sebastianbergmann/phpunit)
- 
-to drive the development.
+We're using [`phpunit/phpunit`](https://github.com/sebastianbergmann/phpunit) to drive the development.
 
 Run
 
