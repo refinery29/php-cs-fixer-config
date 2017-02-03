@@ -20,7 +20,7 @@ to run all the tests.
 
 ### Coding Standards
 
-We are using [`fabpot/php-cs-fixer`](https://github.com/FriendsOfPHP/PHP-CS-Fixer) to enforce coding standards.
+We are using [`friendsofphp/php-cs-fixer`](https://github.com/FriendsOfPHP/PHP-CS-Fixer) to enforce coding standards.
 
 Run
 
