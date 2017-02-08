@@ -148,7 +148,7 @@ final class Refinery29Test extends \PHPUnit_Framework_TestCase
                 'spacing' => 'one',
             ],
             'declare_equal_normalize' => true,
-            'declare_strict_types' => true,
+            'declare_strict_types' => false, // relevant for PHP 7 and above only
             'dir_constant' => false, // risky
             'ereg_to_preg' => false, // risky
             'function_typehint_space' => true,
@@ -242,7 +242,7 @@ final class Refinery29Test extends \PHPUnit_Framework_TestCase
             'psr0' => false, // using PSR-4
             'psr4' => false, // have not decided to use this one (yet)
             'random_api_migration' => false, // risky
-            'return_type_declaration' => true,
+            'return_type_declaration' => false, // relevant for PHP 7 and above only
             'self_accessor' => false, // it causes an edge case error
             'semicolon_after_instruction' => true,
             'short_scalar_cast' => true,
