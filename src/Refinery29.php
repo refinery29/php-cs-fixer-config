@@ -59,7 +59,9 @@ final class Refinery29 extends Config
             'header_comment' => false,
             'heredoc_to_nowdoc' => false,
             'include' => true,
-            'is_null' => false,
+            'is_null' => [
+                'use_yoda_style' => true,
+            ],
             'linebreak_after_opening_tag' => true,
             'lowercase_cast' => true,
             'mb_str_functions' => false,
