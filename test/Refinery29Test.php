@@ -232,7 +232,7 @@ final class Refinery29Test extends \PHPUnit_Framework_TestCase
             'phpdoc_no_empty_return' => true,
             'phpdoc_no_package' => true,
             'phpdoc_no_useless_inheritdoc' => true,
-            'phpdoc_return_self_reference' => false, // have not decided to use this one (yet)
+            'phpdoc_return_self_reference' => true,
             'phpdoc_order' => true,
             'phpdoc_scalar' => true,
             'phpdoc_separation' => true,
