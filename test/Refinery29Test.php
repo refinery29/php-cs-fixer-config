@@ -159,14 +159,14 @@ final class Refinery29Test extends \PHPUnit_Framework_TestCase
             'header_comment' => false, // not enabled by default
             'heredoc_to_nowdoc' => false, // have not decided to use this one (yet)
             'include' => true,
-            'is_null' => false, // have not decided to use this one (yet)
+            'is_null' => true,
             'linebreak_after_opening_tag' => true,
             'lowercase_cast' => true,
             'mb_str_functions' => false, // have not decided to use this one (yet)
             'method_separation' => true,
             'modernize_types_casting' => true,
             'native_function_casing' => true,
-            'native_function_invocation' => false, // have not decided to use this one (yet)
+            'native_function_invocation' => true,
             'new_with_braces' => true,
             'no_alias_functions' => true,
             'no_blank_lines_after_class_opening' => true,
@@ -231,8 +231,8 @@ final class Refinery29Test extends \PHPUnit_Framework_TestCase
             ],
             'phpdoc_no_empty_return' => true,
             'phpdoc_no_package' => true,
-            'phpdoc_no_useless_inheritdoc' => false, // have not decided to use this one (yet)
-            'phpdoc_return_self_reference' => false, // have not decided to use this one (yet)
+            'phpdoc_no_useless_inheritdoc' => true,
+            'phpdoc_return_self_reference' => true,
             'phpdoc_order' => true,
             'phpdoc_scalar' => true,
             'phpdoc_separation' => true,
@@ -261,7 +261,7 @@ final class Refinery29Test extends \PHPUnit_Framework_TestCase
             'strict_comparison' => false, // risky
             'strict_param' => false, // risky
             'ternary_operator_spaces' => true,
-            'ternary_to_null_coalescing' => false, // have not decided to use this one (yet)
+            'ternary_to_null_coalescing' => true,
             'trailing_comma_in_multiline_array' => true,
             'trim_array_spaces' => true,
             'unary_operator_spaces' => true,
