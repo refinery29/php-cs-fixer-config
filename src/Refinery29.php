@@ -134,7 +134,7 @@ final class Refinery29 extends Config
             'phpdoc_no_empty_return' => true,
             'phpdoc_no_package' => true,
             'phpdoc_no_useless_inheritdoc' => true,
-            'phpdoc_return_self_reference' => false,
+            'phpdoc_return_self_reference' => true,
             'phpdoc_order' => true,
             'phpdoc_scalar' => true,
             'phpdoc_separation' => true,
