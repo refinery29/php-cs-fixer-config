@@ -15,29 +15,29 @@ use PhpCsFixer\ConfigInterface;
 use PhpCsFixer\Fixer\FixerInterface;
 use PhpCsFixer\FixerFactory;
 use PhpCsFixer\RuleSet;
-use Refinery29\CS\Config\Refinery29;
+use Refinery29\CS\Config\Php71;
 
-final class Refinery29Test extends \PHPUnit_Framework_TestCase
+final class Php71Test extends \PHPUnit_Framework_TestCase
 {
     public function testImplementsInterface()
     {
-        $config = new Refinery29();
+        $config = new Php71();
 
         $this->assertInstanceOf(ConfigInterface::class, $config);
     }
 
     public function testValues()
     {
-        $config = new Refinery29();
+        $config = new Php71();
 
-        $this->assertSame('refinery29', $config->getName());
+        $this->assertSame('refinery29 (PHP 7.1)', $config->getName());
         $this->assertTrue($config->getUsingCache());
         $this->assertTrue($config->getRiskyAllowed());
     }
 
     public function testHasRules()
     {
-        $config = new Refinery29();
+        $config = new Php71();
 
         $this->assertEquals($this->getRules(), $config->getRules());
     }
@@ -86,7 +86,7 @@ final class Refinery29Test extends \PHPUnit_Framework_TestCase
      */
     private function configuredFixers()
     {
-        $config = new Refinery29();
+        $config = new Php71();
 
         /**
          * RuleSet::create() removes disabled fixers, to let's just enable them to make sure they not removed.
@@ -102,7 +102,7 @@ final class Refinery29Test extends \PHPUnit_Framework_TestCase
 
     public function testDoesNotHaveHeaderCommentFixerByDefault()
     {
-        $config = new Refinery29();
+        $config = new Php71();
 
         $rules = $config->getRules();
 
@@ -114,7 +114,7 @@ final class Refinery29Test extends \PHPUnit_Framework_TestCase
     {
         $header = 'foo';
 
-        $config = new Refinery29($header);
+        $config = new Php71($header);
 
         $rules = $config->getRules();
 
