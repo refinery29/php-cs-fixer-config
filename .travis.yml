@@ -9,10 +9,18 @@ env:
 
 matrix:
   include:
+    - php: 5.6
+      env: WITH_LOWEST=true
+    - php: 5.6
+      env: WITH_HIGHEST=true WITH_CS=true
+    - php: 7.0
+      env: WITH_LOWEST=true
+    - php: 7.0
+      env: WITH_HIGHEST=true
     - php: 7.1
       env: WITH_LOWEST=true
     - php: 7.1
-      env: WITH_HIGHEST=true WITH_CS=true WITH_COVERAGE=true
+      env: WITH_HIGHEST=true WITH_COVERAGE=true
 
 cache:
   directories:
