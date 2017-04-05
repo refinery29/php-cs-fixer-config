@@ -13,7 +13,7 @@ namespace Refinery29\CS\Config;
 
 use PhpCsFixer\Config;
 
-final class Refinery29 extends Config
+final class Php71 extends Config
 {
     /**
      * @var string
@@ -25,7 +25,7 @@ final class Refinery29 extends Config
      */
     public function __construct($header = null)
     {
-        parent::__construct('refinery29');
+        parent::__construct('refinery29 (PHP 7.1)');
 
         $this->header = $header;
 
