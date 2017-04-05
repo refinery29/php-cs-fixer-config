@@ -19,6 +19,13 @@ $ composer require --dev refinery29/php-cs-fixer-config
 
 ## Usage
 
+### Pick a configuration
+
+The following configurations are available:
+
+* `Refinery29\CS\Config\Php56`
+* `Refinery29\CS\Config\Php70`
+
 ### Configuration
 
 Create a configuration file `.php_cs` in the root of your project:
