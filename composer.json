@@ -14,7 +14,7 @@
     },
     "require": {
         "php": "^7.1",
-        "friendsofphp/php-cs-fixer": "^2.1.0"
+        "friendsofphp/php-cs-fixer": "^2.2.0"
     },
     "require-dev": {
         "codeclimate/php-test-reporter": "0.4.2",

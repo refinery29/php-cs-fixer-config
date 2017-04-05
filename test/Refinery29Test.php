@@ -152,7 +152,11 @@ final class Refinery29Test extends \PHPUnit_Framework_TestCase
             'declare_equal_normalize' => true,
             'declare_strict_types' => true,
             'dir_constant' => false, // risky
+            'doctrine_annotation_braces' => false, // have not decided to use this one (yet)
+            'doctrine_annotation_indentation' => false, // have not decided to use this one (yet)
+            'doctrine_annotation_spaces' => false, // have not decided to use this one (yet)
             'ereg_to_preg' => false, // risky
+            'function_to_constant' => false, // have not decided to use this one (yet)
             'function_typehint_space' => true,
             'general_phpdoc_annotation_remove' => false, // have not decided to use this one (yet)
             'hash_to_slash_comment' => true,
@@ -163,6 +167,7 @@ final class Refinery29Test extends \PHPUnit_Framework_TestCase
             'linebreak_after_opening_tag' => true,
             'lowercase_cast' => true,
             'mb_str_functions' => false, // have not decided to use this one (yet)
+            'magic_constant_casing' => false, // have not decided to use this one (yet)
             'method_separation' => true,
             'modernize_types_casting' => true,
             'native_function_casing' => true,
@@ -208,6 +213,7 @@ final class Refinery29Test extends \PHPUnit_Framework_TestCase
             'no_useless_return' => true,
             'no_whitespace_before_comma_in_array' => true,
             'no_whitespace_in_blank_line' => true,
+            'non_printable_character' => false, // have not decided to use this one (yet)
             'normalize_index_brace' => true,
             'not_operator_with_space' => false, // have decided not to use it
             'not_operator_with_successor_space' => false, // have decided not to use it
