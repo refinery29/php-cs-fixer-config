@@ -25,6 +25,7 @@ The following configurations are available:
 
 * `Refinery29\CS\Config\Php56`
 * `Refinery29\CS\Config\Php70`
+* `Refinery29\CS\Config\Php71`
 
 ### Configuration
 
