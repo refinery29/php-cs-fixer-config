@@ -54,7 +54,7 @@ final class Php71 extends Config
             'dir_constant' => false,
             'doctrine_annotation_braces' => true,
             'doctrine_annotation_indentation' => true,
-            'doctrine_annotation_spaces' => false,
+            'doctrine_annotation_spaces' => true,
             'ereg_to_preg' => false,
             'function_to_constant' => false,
             'function_typehint_space' => true,

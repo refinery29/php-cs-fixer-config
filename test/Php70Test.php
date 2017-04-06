@@ -47,7 +47,7 @@ final class Php70Test extends AbstractConfigTestCase
             'dir_constant' => false, // risky
             'doctrine_annotation_braces' => true,
             'doctrine_annotation_indentation' => true,
-            'doctrine_annotation_spaces' => false, // have not decided to use this one (yet)
+            'doctrine_annotation_spaces' => true,
             'ereg_to_preg' => false, // risky
             'function_to_constant' => false, // have not decided to use this one (yet)
             'function_typehint_space' => true,
