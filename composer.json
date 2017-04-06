@@ -19,7 +19,7 @@
     "require-dev": {
         "codeclimate/php-test-reporter": "0.4.4",
         "phpunit/phpunit": "^5.7.19",
-        "refinery29/test-util": "0.10.2"
+        "refinery29/test-util": "0.11.2"
     },
     "autoload": {
         "psr-4": {
