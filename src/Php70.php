@@ -56,7 +56,7 @@ final class Php70 extends Config
             'doctrine_annotation_indentation' => true,
             'doctrine_annotation_spaces' => true,
             'ereg_to_preg' => false,
-            'function_to_constant' => false,
+            'function_to_constant' => true,
             'function_typehint_space' => true,
             'general_phpdoc_annotation_remove' => false,
             'hash_to_slash_comment' => true,

@@ -49,7 +49,7 @@ final class Php56Test extends AbstractConfigTestCase
             'doctrine_annotation_indentation' => true,
             'doctrine_annotation_spaces' => true,
             'ereg_to_preg' => false, // risky
-            'function_to_constant' => false, // have not decided to use this one (yet)
+            'function_to_constant' => true,
             'function_typehint_space' => true,
             'general_phpdoc_annotation_remove' => false, // have not decided to use this one (yet)
             'hash_to_slash_comment' => true,
