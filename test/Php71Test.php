@@ -60,7 +60,7 @@ final class Php71Test extends AbstractConfigTestCase
             'linebreak_after_opening_tag' => true,
             'lowercase_cast' => true,
             'mb_str_functions' => false, // have not decided to use this one (yet)
-            'magic_constant_casing' => false, // have not decided to use this one (yet)
+            'magic_constant_casing' => true,
             'method_separation' => true,
             'modernize_types_casting' => true,
             'native_function_casing' => true,
