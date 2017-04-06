@@ -1,6 +1,5 @@
 <?php
 
-
 /*
  * Copyright (c) 2016 Refinery29, Inc.
  *
