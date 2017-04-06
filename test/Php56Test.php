@@ -10,126 +10,21 @@
 
 namespace Refinery29\CS\Config\Test;
 
-use PhpCsFixer\ConfigInterface;
-use PhpCsFixer\Fixer\FixerInterface;
-use PhpCsFixer\FixerFactory;
-use PhpCsFixer\RuleSet;
 use Refinery29\CS\Config\Php56;
 
-final class Php56Test extends \PHPUnit_Framework_TestCase
+final class Php56Test extends AbstractConfigTestCase
 {
-    public function testImplementsInterface()
+    protected function createConfig($header = null)
     {
-        $config = new Php56();
-
-        $this->assertInstanceOf(ConfigInterface::class, $config);
+        return new Php56($header);
     }
 
-    public function testValues()
+    protected function name()
     {
-        $config = new Php56();
-
-        $this->assertSame('refinery29 (PHP 5.6)', $config->getName());
-        $this->assertTrue($config->getUsingCache());
-        $this->assertTrue($config->getRiskyAllowed());
+        return 'refinery29 (PHP 5.6)';
     }
 
-    public function testHasRules()
-    {
-        $config = new Php56();
-
-        $this->assertEquals($this->getRules(), $config->getRules());
-    }
-
-    public function testAllConfiguredRulesAreBuiltIn()
-    {
-        $fixersNotBuiltIn = \array_diff(
-            $this->configuredFixers(),
-            $this->builtInFixers()
-        );
-
-        $this->assertEmpty($fixersNotBuiltIn, \sprintf(
-            'Failed to assert that fixers for the rules "%s" are built in',
-            \implode('", "', $fixersNotBuiltIn)
-        ));
-    }
-
-    public function testAllBuiltInRulesAreConfigured()
-    {
-        $fixersWithoutConfiguration = \array_diff(
-            $this->builtInFixers(),
-            $this->configuredFixers()
-        );
-
-        $this->assertEmpty($fixersWithoutConfiguration, \sprintf(
-            'Failed to assert that built-in fixers for the rules "%s" are configured',
-            \implode('", "', $fixersWithoutConfiguration)
-        ));
-    }
-
-    /**
-     * @return string[]
-     */
-    private function builtInFixers()
-    {
-        $fixerFactory = FixerFactory::create();
-        $fixerFactory->registerBuiltInFixers();
-
-        return \array_map(function (FixerInterface $fixer) {
-            return $fixer->getName();
-        }, $fixerFactory->getFixers());
-    }
-
-    /**
-     * @return string[]
-     */
-    private function configuredFixers()
-    {
-        $config = new Php56();
-
-        /**
-         * RuleSet::create() removes disabled fixers, to let's just enable them to make sure they not removed.
-         *
-         * @see https://github.com/FriendsOfPHP/PHP-CS-Fixer/pull/2361
-         */
-        $rules = \array_map(function () {
-            return true;
-        }, $config->getRules());
-
-        return \array_keys(RuleSet::create($rules)->getRules());
-    }
-
-    public function testDoesNotHaveHeaderCommentFixerByDefault()
-    {
-        $config = new Php56();
-
-        $rules = $config->getRules();
-
-        $this->assertArrayHasKey('header_comment', $rules);
-        $this->assertFalse($rules['header_comment']);
-    }
-
-    public function testHasHeaderCommentFixerIfProvided()
-    {
-        $header = 'foo';
-
-        $config = new Php56($header);
-
-        $rules = $config->getRules();
-
-        $this->assertArrayHasKey('header_comment', $rules);
-
-        $expected = [
-            'header' => $header,
-        ];
-
-        $this->assertSame($expected, $rules['header_comment']);
-    }
-
-    /**
-     * @return array
-     */
-    private function getRules()
+    protected function rules()
     {
         return [
             '@PSR2' => true,
