@@ -7,7 +7,7 @@ For the full copyright and license information, please view
 the LICENSE file that was distributed with this source code.
 EOF;
 
-$config = new Refinery29\CS\Config\Php71($header);
+$config = new Refinery29\CS\Config\Php56($header);
 $config->getFinder()->in(__DIR__);
 
 $cacheDir = getenv('TRAVIS') ? getenv('HOME') . '/.php-cs-fixer' : __DIR__;
