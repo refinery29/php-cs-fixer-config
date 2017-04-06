@@ -162,9 +162,7 @@ final class Php56Test extends \PHPUnit_Framework_TestCase
             'header_comment' => false, // not enabled by default
             'heredoc_to_nowdoc' => false, // have not decided to use this one (yet)
             'include' => true,
-            'is_null' => [
-                'use_yoda_style' => true,
-            ],
+            'is_null' => true,
             'linebreak_after_opening_tag' => true,
             'lowercase_cast' => true,
             'mb_str_functions' => false, // have not decided to use this one (yet)
