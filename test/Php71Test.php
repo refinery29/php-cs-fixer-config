@@ -45,7 +45,7 @@ final class Php71Test extends AbstractConfigTestCase
             'declare_equal_normalize' => true,
             'declare_strict_types' => true,
             'dir_constant' => false, // risky
-            'doctrine_annotation_braces' => false, // have not decided to use this one (yet)
+            'doctrine_annotation_braces' => true,
             'doctrine_annotation_indentation' => false, // have not decided to use this one (yet)
             'doctrine_annotation_spaces' => false, // have not decided to use this one (yet)
             'ereg_to_preg' => false, // risky
