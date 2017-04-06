@@ -46,7 +46,7 @@ final class Php56Test extends AbstractConfigTestCase
             'declare_strict_types' => false, // relevant for PHP 7 and above only
             'dir_constant' => false, // risky
             'doctrine_annotation_braces' => true,
-            'doctrine_annotation_indentation' => false, // have not decided to use this one (yet)
+            'doctrine_annotation_indentation' => true,
             'doctrine_annotation_spaces' => false, // have not decided to use this one (yet)
             'ereg_to_preg' => false, // risky
             'function_to_constant' => false, // have not decided to use this one (yet)
