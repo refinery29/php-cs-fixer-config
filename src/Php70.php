@@ -53,7 +53,7 @@ final class Php70 extends Config
             'declare_strict_types' => true,
             'dir_constant' => false,
             'doctrine_annotation_braces' => true,
-            'doctrine_annotation_indentation' => false,
+            'doctrine_annotation_indentation' => true,
             'doctrine_annotation_spaces' => false,
             'ereg_to_preg' => false,
             'function_to_constant' => false,
