@@ -67,7 +67,7 @@ final class Php71 extends Config
             'linebreak_after_opening_tag' => true,
             'lowercase_cast' => true,
             'mb_str_functions' => false,
-            'magic_constant_casing' => false,
+            'magic_constant_casing' => true,
             'method_separation' => true,
             'modernize_types_casting' => true,
             'native_function_casing' => true,
