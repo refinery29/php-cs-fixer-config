@@ -6,7 +6,7 @@
 [![Latest Stable Version](https://poser.pugx.org/refinery29/php-cs-fixer-config/v/stable)](https://packagist.org/packages/refinery29/php-cs-fixer-config)
 [![Total Downloads](https://poser.pugx.org/refinery29/php-cs-fixer-config/downloads)](https://packagist.org/packages/refinery29/php-cs-fixer-config)
 
-This repository provides a configuration for [`friendsofphp/php-cs-fixer`](http://github.com/FriendsOfPHP/PHP-CS-Fixer), which
+This repository provides configurations for [`friendsofphp/php-cs-fixer`](http://github.com/FriendsOfPHP/PHP-CS-Fixer), which
 we use to verify and enforce a single coding standard for PHP code within Refinery29.
 
 ## Installation
@@ -34,7 +34,7 @@ Create a configuration file `.php_cs` in the root of your project:
 ```php
 <?php
 
-$config = new Refinery29\CS\Config\Refinery29();
+$config = new Refinery29\CS\Config\Php56();
 $config->getFinder()->in(__DIR__);
 
 $cacheDir = getenv('TRAVIS') ? getenv('HOME') . '/.php-cs-fixer' : __DIR__;
@@ -54,7 +54,7 @@ For the full copyright and license information, please view
 the LICENSE file that was distributed with this source code.
 EOF;
 
-$config = new Refinery29\CS\Config\Refinery29($header);
+$config = new Refinery29\CS\Config\Php56($header);
 ```
 
 ### Git

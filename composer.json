@@ -1,6 +1,6 @@
 {
     "name": "refinery29/php-cs-fixer-config",
-    "description": "Provides a configuration for friendsofphp/php-cs-fixer, used within Refinery29.",
+    "description": "Provides configurations for friendsofphp/php-cs-fixer, used within Refinery29.",
     "type": "library",
     "license": "MIT",
     "authors": [
