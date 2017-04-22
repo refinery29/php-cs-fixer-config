@@ -65,7 +65,9 @@ final class Php71 extends Config
             'include' => true,
             'is_null' => true,
             'linebreak_after_opening_tag' => true,
-            'list_syntax' => false,
+            'list_syntax' => [
+                'syntax' => 'short',
+            ],
             'lowercase_cast' => true,
             'mb_str_functions' => false,
             'magic_constant_casing' => true,
