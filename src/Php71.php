@@ -65,6 +65,7 @@ final class Php71 extends Config
             'include' => true,
             'is_null' => true,
             'linebreak_after_opening_tag' => true,
+            'list_syntax' => false,
             'lowercase_cast' => true,
             'mb_str_functions' => false,
             'magic_constant_casing' => true,
@@ -124,6 +125,7 @@ final class Php71 extends Config
             'php_unit_dedicate_assert' => false,
             'php_unit_fqcn_annotation' => true,
             'php_unit_strict' => false,
+            'php_unit_test_class_requires_covers' => false,
             'phpdoc_add_missing_param_annotation' => [
                 'only_untyped' => false,
             ],
