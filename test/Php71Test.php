@@ -58,7 +58,9 @@ final class Php71Test extends AbstractConfigTestCase
             'include' => true,
             'is_null' => true,
             'linebreak_after_opening_tag' => true,
-            'list_syntax' => false, // have not decided to use this one (yet)
+            'list_syntax' => [
+                'syntax' => 'short',
+            ],
             'lowercase_cast' => true,
             'mb_str_functions' => false, // have not decided to use this one (yet)
             'magic_constant_casing' => true,
