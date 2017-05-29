@@ -1,35 +1,35 @@
 {
-    "name": "refinery29/php-cs-fixer-config",
-    "description": "Provides configurations for friendsofphp/php-cs-fixer, used within Refinery29.",
-    "type": "library",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Andreas Möller",
-            "email": "andreas.moller@refinery29.com"
-        }
-    ],
-    "config": {
-        "preferred-install": "dist",
-        "sort-packages": true
-    },
-    "require": {
-        "php": "^5.6 || ^7.0",
-        "friendsofphp/php-cs-fixer": "^2.3.2"
-    },
-    "require-dev": {
-        "codeclimate/php-test-reporter": "0.4.4",
-        "phpunit/phpunit": "^5.7.19",
-        "refinery29/test-util": "0.11.2"
-    },
-    "autoload": {
-        "psr-4": {
-            "Refinery29\\CS\\Config\\": "src"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Refinery29\\CS\\Config\\Test\\": "test"
-        }
+  "name": "refinery29/php-cs-fixer-config",
+  "description": "Provides configurations for friendsofphp/php-cs-fixer, used within Refinery29.",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Andreas Möller",
+      "email": "andreas.moller@refinery29.com"
     }
+  ],
+  "config": {
+    "preferred-install": "dist",
+    "sort-packages": true
+  },
+  "require": {
+    "php": "^5.6 || ^7.0",
+    "friendsofphp/php-cs-fixer": "^2.3.2"
+  },
+  "require-dev": {
+    "codeclimate/php-test-reporter": "0.4.4",
+    "phpunit/phpunit": "^5.7.19",
+    "refinery29/test-util": "0.11.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "Refinery29\\CS\\Config\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Refinery29\\CS\\Config\\Test\\": "test"
+    }
+  }
 }
