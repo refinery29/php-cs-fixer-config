@@ -71,19 +71,6 @@ abstract class AbstractConfigTestCase extends Framework\TestCase
         ));
     }
 
-    final public function testAllBuiltInRulesAreConfigured()
-    {
-        $fixersWithoutConfiguration = \array_diff(
-            $this->builtInFixers(),
-            $this->configuredFixers()
-        );
-
-        $this->assertEmpty($fixersWithoutConfiguration, \sprintf(
-            'Failed to assert that built-in fixers for the rules "%s" are configured',
-            \implode('", "', $fixersWithoutConfiguration)
-        ));
-    }
-
     public function testDoesNotHaveHeaderCommentFixerByDefault()
     {
         $rules = $this->createConfig()->getRules();
