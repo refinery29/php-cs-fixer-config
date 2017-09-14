@@ -140,7 +140,7 @@ final class Php71Test extends AbstractConfigTestCase
             'phpdoc_scalar' => true,
             'phpdoc_separation' => true,
             'phpdoc_single_line_var_spacing' => true,
-            'phpdoc_summary' => true,
+            'phpdoc_summary' => false,
             'phpdoc_to_comment' => false, // it reduces usability of @see and @link annotations
             'phpdoc_trim' => true,
             'phpdoc_types' => true,
