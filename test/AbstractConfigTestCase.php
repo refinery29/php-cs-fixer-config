@@ -74,7 +74,7 @@ abstract class AbstractConfigTestCase extends Framework\TestCase
     final public function testAllBuiltInRulesAreConfigured()
     {
         $fixersWithoutConfiguration = \array_diff(
-            $this->builtInFixers(),
+            $this->builtInFixers(true),
             $this->configuredFixers()
         );
 
@@ -110,12 +110,19 @@ abstract class AbstractConfigTestCase extends Framework\TestCase
     }
 
     /**
+     * @param bool $useRuleSet
      * @return string[]
      */
-    private function builtInFixers()
+    private function builtInFixers($useRuleSet = false)
     {
+        $rules = $this->createConfig()->getRules();
+
         $fixerFactory = FixerFactory::create();
         $fixerFactory->registerBuiltInFixers();
+
+        if ($useRuleSet === true) {
+            $fixerFactory->useRuleSet(new RuleSet($rules));
+        }
 
         return \array_map(function (Fixer\FixerInterface $fixer) {
             return $fixer->getName();
