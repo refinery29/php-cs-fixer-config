@@ -31,7 +31,8 @@ before_install:
   - source .travis/xdebug.sh
   - xdebug-disable
   - composer validate
-  - composer config github-oauth.github.com $GITHUB_TOKEN
+  - composer config -g github-oauth.github.com $GH_TOKEN
+  - unset GH_TOKEN
 
 install:
   - if [[ "$WITH_LOWEST" == "true" ]]; then composer update --prefer-lowest; else composer install; fi
