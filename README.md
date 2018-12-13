@@ -142,7 +142,7 @@ GIT_HOOKS_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 PROJECT_DIRECTORY="$GIT_HOOKS_DIR/../.."
 
 cd $PROJECT_DIRECTORY;
-PHP_CS_FIXER="vendor/bin/php-cs-fixer"
+PHP_CS_FIXER="php-cs-fixer"
 
 HAS_PHP_CS_FIXER=false
 
