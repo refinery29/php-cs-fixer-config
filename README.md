@@ -159,7 +159,7 @@ else
     echo ""
     echo "Please install php-cs-fixer, e.g.:"
     echo ""
-    echo "  composer require --dev friendsofphp/php-cs-fixer:^2.2.0
+    echo "  composer require --dev friendsofphp/php-cs-fixer:^2.2.0"
     echo ""
 fi
 
