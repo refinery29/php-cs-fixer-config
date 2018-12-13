@@ -125,7 +125,7 @@ $ make cs
 You can add a `pre-commit` hook
 
 ```
-$ touch .git/pre-commit && chmod +x .git/pre-commit
+$ touch .git/hooks/pre-commit && chmod +x .git/hooks/pre-commit
 ```
 
 Paste this into `.git/pre-commit`:
@@ -142,7 +142,7 @@ GIT_HOOKS_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 PROJECT_DIRECTORY="$GIT_HOOKS_DIR/../.."
 
 cd $PROJECT_DIRECTORY;
-PHP_CS_FIXER="vendor/bin/php-cs-fixer"
+PHP_CS_FIXER="php-cs-fixer"
 
 HAS_PHP_CS_FIXER=false
 
@@ -159,7 +159,7 @@ else
     echo ""
     echo "Please install php-cs-fixer, e.g.:"
     echo ""
-    echo "  composer require --dev friendsofphp/php-cs-fixer:^2.2.0
+    echo "  composer require --dev friendsofphp/php-cs-fixer:^2.2.0"
     echo ""
 fi
 
