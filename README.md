@@ -125,7 +125,7 @@ $ make cs
 You can add a `pre-commit` hook
 
 ```
-$ touch .git/pre-commit && chmod +x .git/pre-commit
+$ touch .git/hooks/pre-commit && chmod +x .git/hooks/pre-commit
 ```
 
 Paste this into `.git/pre-commit`:
